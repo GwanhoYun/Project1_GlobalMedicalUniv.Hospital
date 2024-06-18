@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="org.hj.mapper.MemberMapper">
+  
+  <insert id ="memberJoin">
+  insert into tbl_member (id, password, name,  addr, employee_Dept, age, admin_boolean, guardian_name, guardian_age,rrn,gender)
+    values (#{id}, #{password}, #{name}, #{addr},#{employee_Dept}, #{age}, #{admin_boolean}, #{guardian_name}, #{guardian_age}, #{rrn},#{gender});
+  
+  </insert>
+  
+  
+   
+  </mapper>
