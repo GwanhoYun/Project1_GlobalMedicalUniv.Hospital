@@ -27,7 +27,7 @@
                 <a href="certificate.html">예약/제증명</a>
                 <a href="#">진료과</a>
                 <a href="#">병원소개</a>
-                <a href="#">찾아오시는길</a>
+                <a href="#">찾아오시는길ㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ</a>
             </div>
             <div class="login">
                 <a onclick="loginForm_btn()">로그인</a>
