@@ -9,6 +9,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="/resources/css/membership_2.css" type="text/css">
     
+    
     <!-- js랑 css경로 확인해주세용 -->
 </head>
 
@@ -181,7 +182,7 @@
                                     <span class="warning_message_hidden_id"></span>
                                 </div>
                                 <div class="id_container">
-                                    <input type="text" maxlength='15' name="id" placeholder="영어, 숫자조합 6~15자" required>
+                                    <input type="text" maxlength='15' id='getId' name="id" class="id_input" placeholder="영어, 숫자조합 6~15자" required>
                                     <button class="search_duplicate" type="button" onclick="idCheck()" >중복확인</button>
                                 </div>
                             </td>
@@ -317,7 +318,7 @@
                 <a href="#">이용약관</a>
                 <a href="#">환자권리장전</a>
                 <a href="#">개인정보처리정책</a>
-                <a href="#">비급여진료비용안내ㅇㅇㅇㅇㅇㅇ</a>
+                <a href="#">비급여진료비용안내</a>
             </div>
             <div class="hospital_info">
                 <p>주소 : 서울특별시 고백로 123-4(행복동) 글로벌메디컬대학병원 한국지사 | 대표전화 : 1600-0000</p>
@@ -329,5 +330,7 @@
 </body>
 
 <script type="text/javascript" src="/resources/js/membership_2.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 
 </html>

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class memberShipController {
@@ -26,13 +27,34 @@ public class memberShipController {
   
   //회원가입 버튼
   //여기 /join 값은 view 에서 줄 예정
-  @RequestMapping(value = "membership", method = RequestMethod.POST)
+  @RequestMapping(value = "/membership", method = RequestMethod.POST)
   public String Join(memberVO member) throws Exception {
     
     memberservice.memberJoin(member);
-    
+    System.out.print("값이 db로 전송되었습니다.");
     return "/membership_3";
    }
+  
+  //아이디 중복 검사
+  @RequestMapping(value = "/memberIdChk", method = RequestMethod.POST)
+  @ResponseBody
+  public String memberIdChkPOST(String id) throws Exception {
+    
+    
+    int result = memberservice.idCheck(id);
+    
+
+    
+    if (result != 0) {
+     
+     return "fail";   //중복 아이디가 존재
+    
+    } else {
+     
+     return "success";  //중복 아이디 X
+     
+    } // 0: 사용 가능한 아이디, 1: 사용중인 아이디, 기타: 오류
+  } //memberIdChkPOST() 종료
   
   @RequestMapping(value = "membershipTest", method = RequestMethod.POST)
   public String JoinTest(memberVO member) throws Exception {

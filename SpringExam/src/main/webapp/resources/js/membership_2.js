@@ -1,3 +1,5 @@
+
+
 //약관 체크박스 (모두 동의)
 document.querySelector('.all_check').addEventListener('change', function () {
     const allCheck = document.querySelectorAll('.check');
@@ -43,10 +45,36 @@ window.addEventListener('DOMContentLoaded', (event1) => {
 });
 
 function idCheck() {
+    var id = document.getElementById('getId').value;
+    var data = { id: id };
     
-    alert("중복 확인을 시작합니다.");
-
+    $.ajax({
+        type: "post",
+        url: "/memberIdChk",
+        data: data,
+        success: function(result) {
+            console.log("성공 여부: " + result);
+            if(result == 'success'){
+            	alert("사용가능한 아이디 입니다.");
+            }else{
+            	alert("이미 사용중인 아이디 입니다.");
+            }
+            
+            
+//            if (result==0) {
+//                alert("사용 가능한 아이디 입니다.");
+//            } else if (result == 1) {
+//                alert("사용중인 아이디 입니다.");
+//            } else {
+//                alert("오류가 발생했습니다. 다시 시도해주세요.");
+//            }
+        }
+//        error: function() {
+//            alert("서버와의 통신에 오류가 발생했습니다.");
+//        }
+    }); // ajax 종료
 }
+
 
 
 function toggleDisplay(elements, display) {
