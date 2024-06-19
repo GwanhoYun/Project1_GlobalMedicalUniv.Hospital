@@ -42,35 +42,19 @@ window.addEventListener('DOMContentLoaded', (event1) => {
     }
 });
 
-function idCheck() {
+function idCheck(callback) {
     var id = document.getElementById('getId').value;
     var data = { id: id };
-    
+
     $.ajax({
         type: "post",
         url: "/memberIdChk",
         data: data,
         success: function(result) {
             console.log("성공 여부: " + result);
-            if(result == 'success'){
-               alert("사용가능한 아이디 입니다.");
-            }else{
-               alert("이미 사용중인 아이디 입니다.");
-            }
-            
-            
-//            if (result==0) {
-//                alert("사용 가능한 아이디 입니다.");
-//            } else if (result == 1) {
-//                alert("사용중인 아이디 입니다.");
-//            } else {
-//                alert("오류가 발생했습니다. 다시 시도해주세요.");
-//            }
+            callback(result === 'success');
         }
-//        error: function() {
-//            alert("서버와의 통신에 오류가 발생했습니다.");
-//        }
-    }); // ajax 종료
+    });
 }
 
 
@@ -200,8 +184,15 @@ function warningMessage() {
                 messageColor([warningId], 'red');
                 messageText([warningId], '아이디는 6~15자이어야 합니다.');
             } else {
-                messageColor([warningId], 'green');
-                messageText([warningId], '사용 가능한 아이디입니다.');
+                idCheck(function(isAvailable) {
+                    if (isAvailable) {
+                        messageColor([warningId], 'green');
+                        messageText([warningId], '사용 가능한 아이디입니다.');
+                    } else {
+                        messageColor([warningId], 'red');
+                        messageText([warningId], '이미 사용중인 아이디 입니다.');
+                    }
+                });
             }
         } else {
             messageColor([warningId], 'red');
@@ -364,59 +355,70 @@ function warningMessage() {
             messageText([warningGuadianRN], '주민번호는 필수 입력 사항입니다.');
         }
     }
-//    const form = document.querySelector('.membership_form');
-//    form.addEventListener('submit', function (event) {
-//        event.preventDefault();
-//
-//        // 모든 필수 입력 필드에 대해 유효성 검사
-//        const requiredInputs = document.querySelectorAll('.membership_form [required]');
-//        let allInputsValid = true;
-//
-//        requiredInputs.forEach(input => {
-//            if (!validateInput(input)) {
-//                allInputsValid = false;
-//            }
-//        });
-//
-//        // 모든 필수 입력 필드가 유효할 경우 폼 제출
-//        if (allInputsValid) {
-//            form.submit();
+
+//----------------------------------------------------------------------------------------------
+   const form = document.querySelector('.membership_form');
+   form.addEventListener('submit', function (event) {
+       event.preventDefault();
+
+       // 모든 필수 입력 필드에 대해 유효성 검사
+       const requiredInputs = document.querySelectorAll('.membership_form [required]');
+       let allInputsValid = true;
+
+       requiredInputs.forEach(input => {
+           if (!validateInput(input)) {
+               allInputsValid = false;
+           }
+       });
+
+       // 모든 필수 입력 필드가 유효할 경우 폼 제출
+       if (allInputsValid) {
+           form.submit();
     
     
-//            const nextPageUrl = 'membership_3.html';
-//            window.location.href = nextPageUrl;
+           const nextPageUrl = 'membership_3.html';
+           window.location.href = nextPageUrl;
     
     
     
-//        } else {
-//            alert('필수 입력 사항을 올바르게 입력해주세요.');
-//        }
-//    });
-//
-//    // 입력 필드의 유효성 검사 함수
-//    function validateInput(input) {
-//        const value = input.value.trim();
-//
-//        // 필드 유효성 검사 조건에 따라 처리
-//        if (input.classList.contains('user_id')) {
-//            return value.length !== 0 && onlyNumberAndEnglish(value) && idLength(value);
-//        } else if (input.classList.contains('user_pw')) {
-//            return value.length !== 0 && onlyNumberAndEnglish(value) && pwLength(value) && value !== userId.value;
-//        } else if (input.classList.contains('user_repw')) {
-//            return value === userPw.value;
-//        } else if (input.classList.contains('office_num')) {
-//            return value.length !== 0 && officeNumLength(value);
-//        } else if (input.classList.contains('user_name') || input.classList.contains('guardian_name')) {
-//            return value.length !== 0 && onlyKorean(value) && nameLength(value);
-//        } else if (input.classList.contains('resident_registration_num_form1')) {
-//            return value.length !== 0 && onlyNumber(value) && firstRegNumLength(value);
-//        } else if (input.classList.contains('resident_registration_num_form2')) {
-//            return value.length !== 0 && onlyNumber(value) && secoundRegNumLength(value);
-//        }
+       } else {
+           alert('필수 입력 사항을 올바르게 입력해주세요.');
+       }
+   });
+
+   // 입력 필드의 유효성 검사 함수
+   function validateInput(input) {
+       const value = input.value.trim();
+
+       // 필드 유효성 검사 조건에 따라 처리
+       if (input.classList.contains('user_id')) {
+        if (value.length === 0 || !onlyNumberAndEnglish(value) || !idLength(value)) {
+            return false;
+        } else {
+            // 아이디 중복 체크를 비동기로 처리
+            return new Promise((resolve) => {
+                idCheck((isAvailable) => {
+                    resolve(isAvailable);
+                });
+            });
+        }
+        } else if (input.classList.contains('user_pw')) {
+           return value.length !== 0 && onlyNumberAndEnglish(value) && pwLength(value) && value !== userId.value;
+       } else if (input.classList.contains('user_repw')) {
+           return value === userPw.value;
+       } else if (input.classList.contains('office_num')) {
+           return value.length !== 0 && officeNumLength(value);
+       } else if (input.classList.contains('user_name') || input.classList.contains('guardian_name')) {
+           return value.length !== 0 && onlyKorean(value) && nameLength(value);
+       } else if (input.classList.contains('resident_registration_num_form1')) {
+           return value.length !== 0 && onlyNumber(value) && firstRegNumLength(value);
+       } else if (input.classList.contains('resident_registration_num_form2')) {
+           return value.length !== 0 && onlyNumber(value) && secoundRegNumLength(value);
+       }
 
         // 기타 필드에 대한 추가적인 유효성 검사가 필요한 경우 처리
-//        return true;
+       return true;
     }
-//}
+}
 
 warningMessage();
