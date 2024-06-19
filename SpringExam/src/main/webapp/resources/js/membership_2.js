@@ -1,5 +1,3 @@
-
-
 //약관 체크박스 (모두 동의)
 document.querySelector('.all_check').addEventListener('change', function () {
     const allCheck = document.querySelectorAll('.check');
@@ -55,9 +53,9 @@ function idCheck() {
         success: function(result) {
             console.log("성공 여부: " + result);
             if(result == 'success'){
-            	alert("사용가능한 아이디 입니다.");
+               alert("사용가능한 아이디 입니다.");
             }else{
-            	alert("이미 사용중인 아이디 입니다.");
+               alert("이미 사용중인 아이디 입니다.");
             }
             
             
