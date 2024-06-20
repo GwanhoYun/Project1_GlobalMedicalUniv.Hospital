@@ -42,20 +42,7 @@ window.addEventListener('DOMContentLoaded', (event1) => {
     }
 });
 
-function idCheck(callback) {
-    var id = document.getElementById('getId').value;
-    var data = { id: id };
 
-    $.ajax({
-        type: "post",
-        url: "/memberIdChk",
-        data: data,
-        success: function(result) {
-            console.log("성공 여부: " + result);
-            callback(result === 'success');
-        }
-    });
-}
 
 function toggleDisplay(elements, display) {
     elements.forEach(element => {
@@ -92,7 +79,7 @@ function checkedAge() {
     } else if (checkedRadio.value === 'over14') {
         toggleDisplay([medicalOffice, officeNum, guardianName, guardianNum], 'none');
         toggleRequired([guardianNameInput, guardianNumInput, officeNumInput], false);
-        
+
     } else {
         toggleDisplay([medicalOffice, officeNum], 'table-row');
         toggleDisplay([guardianName, guardianNum], 'none');
@@ -133,7 +120,7 @@ function warningMessage() {
         userRegNum2 = document.querySelector('.user_resident_registration_num .resident_registration_num_form2'),
         userGuadianRNum1 = document.querySelector('.guardian_resident_registration_num .resident_registration_num_form1'),
         userGuadianRNum2 = document.querySelector('.guardian_resident_registration_num .resident_registration_num_form2');
-    
+
     const warningId = document.querySelector('.warning_message_hidden_id'),
         warningPw = document.querySelector('.warning_message_hidden_pw'),
         warningRePw = document.querySelector('.warning_message_hidden_repw'),
@@ -183,34 +170,71 @@ function warningMessage() {
         return containsNumbers;
     }
 
+    function idCheck(callback) {
+        var id = document.getElementById('getId').value;
+        var data = { id: id };
+
+        $.ajax({
+            type: "post",
+            url: "/memberIdChk",
+            data: data,
+            success: function (result) {
+                console.log("success: " + result);
+                callback(true);
+            },
+            error: function (xhr, status, error) {
+                console.error("Error: " + error);
+                callback(false);
+            }
+        });
+    }
+
     userId.onkeyup = function () {
         if (userId.value.length !== 0) {
-            if (!onlyNumberAndEnglish(userId.value)) {
+            if (!onlyNumberAndEnglish(userId.value) && !idLength(userId.value)) {
                 messageColor([warningId], 'red');
-                messageText([warningId], '영어와 숫자를 모두 포함해야 합니다.');
+                messageText([warningId], '영어, 숫자를 포함 6~15자이어야 합니다.');
+                userPw.disabled = false;
+            } else if (!onlyNumberAndEnglish(userId.value)) {
+                messageColor([warningId], 'red');
+                messageText([warningId], '영어와 숫자를 포함해야 합니다.');
+                userPw.disabled = false;
             } else if (!idLength(userId.value)) {
                 messageColor([warningId], 'red');
                 messageText([warningId], '아이디는 6~15자이어야 합니다.');
+                userPw.disabled = false;
             } else {
-                idCheck(function(isAvailable) {
-                    if (isAvailable) {
-                        messageColor([warningId], 'green');
-                        messageText([warningId], '사용 가능한 아이디입니다.');
-                    } else {
-                        messageColor([warningId], 'red');
-                        messageText([warningId], '이미 사용중인 아이디 입니다.');
-                    }
-                });
+                messageColor([warningId], 'green');
+                messageText([warningId], '아이디 중복확인 해주세요.');
+                userPw.disabled = false;
             }
         } else {
             messageColor([warningId], 'red');
             messageText([warningId], '아이디는 필수 입력 사항입니다.');
+            userPw.disabled = false;
         }
     }
 
+    idCheck(function (isSuccess) {
+        if (isSuccess) {
+            messageColor([warningId], 'green');
+            messageText([warningId], '사용 가능한 아이디 입니다.')
+            userPw.placeholder = "영어, 숫자조합 9~16자"
+            userPw.disabled = true;
+        } else {
+            messageColor([warningId], 'green');
+            messageText([warningId], '사용 중인 아이디 입니다.')
+            userPw.disabled = false;
+        }
+    })
+
     userPw.onkeyup = function () {
         if (userPw.value.length !== 0) {
-            if (!onlyNumberAndEnglish(userPw.value)) {
+            if (!onlyNumberAndEnglish(userPw.value) && !pwLength(userPw.value)) {
+                messageColor([warningPw], 'red');
+                messageText([warningPw], '영어, 숫자를 포함 9~16자이어야 합니다.');
+            }
+            else if (!onlyNumberAndEnglish(userPw.value)) {
                 messageColor([warningPw], 'red');
                 messageText([warningPw], '영어와 숫자를 모두 포함해야 합니다.');
                 userRePw.disabled = true;
@@ -286,6 +310,40 @@ function warningMessage() {
             messageText([warningName], '이름은 필수 입력 사항입니다.');
         }
     }
+    userRegNum1.onkeyup = function () {
+        if (userRegNum1.value.length !== 0) {
+            if (!onlyNumber(userRegNum1.value)) {
+                messageColor([warningRegNum], 'red');
+                messageText([warningRegNum], '숫자만 입력 가능합니다.');
+            } else if (!firstRegNumLength(userRegNum1.value)) {
+                messageColor([warningRegNum], 'red');
+                messageText([warningRegNum], '주민번호 앞자리 6자리를 입력해주세요.');
+            } else if (firstRegNumLength(userRegNum1.value) && userRegNum2.value.length === 0) {
+                messageColor([warningRegNum], 'red');
+                messageText([warningRegNum], '주민번호 뒷자리를 입력해주세요.');
+            } else {
+                messageText([warningRegNum], ' ');
+            }
+        } else {
+            messageColor([warningRegNum], 'red');
+            messageText([warningRegNum], '주민번호는 필수 입력 사항입니다.');
+        }
+    }
+    userRegNum2.onkeyup = function () {
+        if (userRegNum2.value.length !== 0) {
+            if (!onlyNumber(userRegNum2.value)) {
+                messageColor([warningRegNum], 'red');
+                messageText([warningRegNum], '숫자만 입력 가능합니다.');
+            } else if (!secoundRegNumLength(userRegNum2.value)) {
+                messageColor([warningRegNum], 'red');
+                messageText([warningRegNum], '주민번호 뒷자리는 7자리 입니다.');
+            } else {
+                messageText([warningRegNum], ' ');
+            }
+        } else {
+            messageText([warningRegNum], ' ');
+        }
+    }
 
     userGuadianN.onkeyup = function () {
         if (userGuadianN.value.length !== 0) {
@@ -305,61 +363,90 @@ function warningMessage() {
         }
     }
 
-    function validateRegNumPart1(input, warningElement) {
-        if (input.value.length !== 0) {
-            if (onlyNumber(input.value)) {
-                if (!firstRegNumLength(input.value)) {
-                    messageColor([warningElement], 'red');
-                    messageText([warningElement], '숫자 6자리입니다.');
-                } else {
-                    messageColor([warningElement], 'green');
-                    messageText([warningElement], '유효한 번호입니다.');
-                }
-            } else {
-                messageColor([warningElement], 'red');
-                messageText([warningElement], '유효한 숫자를 입력해주세요.');
-            }
-        } else {
-            messageColor([warningElement], 'red');
-            messageText([warningElement], '앞자리 번호는 필수 입력 사항입니다.');
-        }
-    }
-
-    function validateRegNumPart2(input, warningElement) {
-        if (input.value.length !== 0) {
-            if (onlyNumber(input.value)) {
-                if (!secoundRegNumLength(input.value)) {
-                    messageColor([warningElement], 'red');
-                    messageText([warningElement], '숫자 7자리입니다.');
-                } else {
-                    messageColor([warningElement], 'green');
-                    messageText([warningElement], '유효한 번호입니다.');
-                }
-            } else {
-                messageColor([warningElement], 'red');
-                messageText([warningElement], '유효한 숫자를 입력해주세요.');
-            }
-        } else {
-            messageColor([warningElement], 'red');
-            messageText([warningElement], '뒷자리 번호는 필수 입력 사항입니다.');
-        }
-    }
-
-    userRegNum1.onkeyup = function () {
-        validateRegNumPart1(userRegNum1, warningRegNum);
-    }
-
-    userRegNum2.onkeyup = function () {
-        validateRegNumPart2(userRegNum2, warningRegNum);
-    }
-
     userGuadianRNum1.onkeyup = function () {
-        validateRegNumPart1(userGuadianRNum1, warningGuadianRN);
+        if (userGuadianRNum1.value.length !== 0) {
+            if (!onlyNumber(userGuadianRNum1.value)) {
+                messageColor([warningGuadianRN], 'red');
+                messageText([warningGuadianRN], '숫자만 입력 가능합니다.');
+            } else if (!firstRegNumLength(userGuadianRNum1.value)) {
+                messageColor([warningGuadianRN], 'red');
+                messageText([warningGuadianRN], '주민번호 앞자리 6자리를 입력해주세요.');
+            } else if (firstRegNumLength(userGuadianRNum1.value) && userRegNum2.value.length === 0) {
+                messageColor([warningGuadianRN], 'red');
+                messageText([warningGuadianRN], '주민번호 뒷자리를 입력해주세요.');
+            } else {
+                messageText([warningGuadianRN], ' ');
+            }
+        } else {
+            messageColor([warningGuadianRN], 'red');
+            messageText([warningGuadianRN], '주민번호는 필수 입력 사항입니다.');
+        }
+    }
+    userGuadianRNum2.onkeyup = function () {
+        if (userGuadianRNum2.value.length !== 0) {
+            if (!onlyNumber(userGuadianRNum2.value)) {
+                messageColor([warningGuadianRN], 'red');
+                messageText([warningGuadianRN], '숫자만 입력 가능합니다.');
+            } else if (!secoundRegNumLength(userGuadianRNum2.value)) {
+                messageColor([warningGuadianRN], 'red');
+                messageText([warningGuadianRN], '주민번호 뒷자리는 7자리 입니다.');
+            } else {
+                messageText([warningGuadianRN], ' ');
+            }
+        } else {
+            messageColor([warningGuadianRN], 'red');
+            messageText([warningGuadianRN], '주민번호는 필수 입력 사항입니다.');
+        }
     }
 
-    userGuadianRNum2.onkeyup = function () {
-        validateRegNumPart2(userGuadianRNum2, warningGuadianRN);
+    const form = document.querySelector('.membership_form');
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        // 모든 필수 입력 필드에 대해 유효성 검사
+        const requiredInputs = document.querySelectorAll('.membership_form [required]');
+        let allInputsValid = true;
+
+        requiredInputs.forEach(input => {
+            if (!validateInput(input, idCheckResult)) {
+                allInputsValid = false;
+            }
+        });
+
+        // 모든 필수 입력 필드가 유효할 경우 폼 제출
+        if (allInputsValid && idCheckResult) {
+            form.submit();
+        } else {
+            alert('필수 입력 사항을 올바르게 입력해주세요.');
+        }
+    });
+
+    // 입력 필드의 유효성 검사 함수
+    function validateInput(input, idCheckResult) {
+        const value = input.value.trim();
+
+        // 필드 유효성 검사 조건에 따라 처리
+        if (idCheckResult) {
+            if (input.classList.contains('user_id')) {
+                return value.length !== 0 && onlyNumberAndEnglish(value) && idLength(value);
+            } else if (input.classList.contains('user_pw')) {
+                return value.length !== 0 && onlyNumberAndEnglish(value) && pwLength(value) && value !== userId.value;
+            } else if (input.classList.contains('user_repw')) {
+                return value === userPw.value;
+            } else if (input.classList.contains('office_num')) {
+                return value.length !== 0 && officeNumLength(value);
+            } else if (input.classList.contains('user_name') || input.classList.contains('guardian_name')) {
+                return value.length !== 0 && onlyKorean(value) && nameLength(value);
+            } else if (input.classList.contains('resident_registration_num_form1')) {
+                return value.length !== 0 && onlyNumber(value) && firstRegNumLength(value);
+            } else if (input.classList.contains('resident_registration_num_form2')) {
+                return value.length !== 0 && onlyNumber(value) && secoundRegNumLength(value);
+            }
+        }
+        // 기타 필드에 대한 추가적인 유효성 검사가 필요한 경우 처리
+        return true;
     }
+
 }
 
 warningMessage();
