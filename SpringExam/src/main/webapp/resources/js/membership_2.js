@@ -96,6 +96,46 @@ window.addEventListener('DOMContentLoaded', (event2) => {
     checkedAge();
 });
 
+function idCheck(callback) {
+    var id = document.getElementById('getId').value;
+    var data = { id: id };
+
+    $.ajax({
+        type: "post",
+        url: "/memberIdChk",
+        data: data,
+        success: function (result) {
+            console.log("success: " + result);
+            callback(true); // 성공 시 callback 호출
+        },
+        error: function (xhr, status, error) {
+            console.error("Error: " + error);
+            callback(false); // 실패 시 callback 호출
+        }
+    });
+}
+
+function checkIdDuplication() {
+	
+	const warningId = document.querySelector('.warning_message_hidden_id'),
+    	  warningPw = document.querySelector('.warning_message_hidden_pw');
+	let   userPw = document.querySelector('.user_pw td input');
+    	  
+    idCheck(function (isSuccess) {
+        if (isSuccess) {
+            messageColor([warningId], 'green');
+            messageText([warningId], '사용 가능한 아이디 입니다.')
+            userPw.placeholder = "영어, 숫자 조합 9~16자"
+            userPw.disabled = false;
+            
+        } else {
+            messageColor([warningId], 'green');
+            messageText([warningId], '사용 중인 아이디 입니다.')
+            userPw.disabled = true;
+        }
+    });
+}
+
 // 회원가입 유효성 검사
 function messageColor(userInputs, color) {
     userInputs.forEach(userInput => {
@@ -170,63 +210,31 @@ function warningMessage() {
         return containsNumbers;
     }
 
-    function idCheck(callback) {
-        var id = document.getElementById('getId').value;
-        var data = { id: id };
-
-        $.ajax({
-            type: "post",
-            url: "/memberIdChk",
-            data: data,
-            success: function (result) {
-                console.log("success: " + result);
-                callback(true);
-            },
-            error: function (xhr, status, error) {
-                console.error("Error: " + error);
-                callback(false);
-            }
-        });
-    }
-
     userId.onkeyup = function () {
         if (userId.value.length !== 0) {
             if (!onlyNumberAndEnglish(userId.value) && !idLength(userId.value)) {
                 messageColor([warningId], 'red');
                 messageText([warningId], '영어, 숫자를 포함 6~15자이어야 합니다.');
-                userPw.disabled = false;
+                userPw.disabled = true;
             } else if (!onlyNumberAndEnglish(userId.value)) {
                 messageColor([warningId], 'red');
                 messageText([warningId], '영어와 숫자를 포함해야 합니다.');
-                userPw.disabled = false;
+                userPw.disabled = true;
             } else if (!idLength(userId.value)) {
                 messageColor([warningId], 'red');
                 messageText([warningId], '아이디는 6~15자이어야 합니다.');
-                userPw.disabled = false;
+                userPw.disabled = true;
             } else {
                 messageColor([warningId], 'green');
                 messageText([warningId], '아이디 중복확인 해주세요.');
-                userPw.disabled = false;
+                userPw.disabled = true;
             }
         } else {
             messageColor([warningId], 'red');
             messageText([warningId], '아이디는 필수 입력 사항입니다.');
-            userPw.disabled = false;
+            userPw.disabled = true;
         }
     }
-
-    idCheck(function (isSuccess) {
-        if (isSuccess) {
-            messageColor([warningId], 'green');
-            messageText([warningId], '사용 가능한 아이디 입니다.')
-            userPw.placeholder = "영어, 숫자조합 9~16자"
-            userPw.disabled = true;
-        } else {
-            messageColor([warningId], 'green');
-            messageText([warningId], '사용 중인 아이디 입니다.')
-            userPw.disabled = false;
-        }
-    })
 
     userPw.onkeyup = function () {
         if (userPw.value.length !== 0) {
@@ -289,7 +297,7 @@ function warningMessage() {
             }
         } else {
             messageColor([warningOfficeNum], 'red');
-            messageText([warningOfficeNum], '의원 번호는 필수 입력 사항입니다.');
+            messageText([warningOfficeNum], '직원번호는 필수 입력 사항입니다.');
         }
     }
 
@@ -448,5 +456,5 @@ function warningMessage() {
     }
 
 }
-
 warningMessage();
+
