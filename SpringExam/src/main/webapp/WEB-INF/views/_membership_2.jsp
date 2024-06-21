@@ -180,7 +180,7 @@
                                     <span class="warning_message_hidden_id"></span>
                                 </div>
                                 <div class="id_container">
-                                    <input type="text" maxlength='15' id='getId' name="id" class="id_input" placeholder="영어, 숫자조합 6~15자" required>
+                                    <input class="engNum-only-input" type="text" maxlength='15' id='getId' name="id" class="id_input" placeholder="영어, 숫자조합 6~15자" required>
                                     <button class="search_duplicate" type="button" onclick="idCheck()" disabled>중복확인</button>
                                 </div>
                             </td>
@@ -191,7 +191,7 @@
                                     <span>비밀번호*</span>
                                     <span class="warning_message_hidden_pw"></span>
                                 </div>
-                                <input type="password" maxlength='16' name="password" placeholder="사용 가능한 아이디 입력 시 입력가능" required disabled>
+                                <input type="password" maxlength='16' name="password" placeholder="사용 가능한 아이디 입력 시 입력가능" required readonly>
                             </td>
                         </tr>
                         <tr class="user_repw">
@@ -238,7 +238,7 @@
                                     <span>이름*</span>
                                     <span class="warning_message_hidden_name"></span>
                                 </div>
-                                <input type="text" maxlength='6' name="name" required>
+                                <input class="korean-only-input" type="text" maxlength='6' name="name" required>
                             </td>
                         </tr>
                         <tr class="user_resident_registration_num">
@@ -276,7 +276,7 @@
                                     <span>보호자 이름*</span>
                                     <span class="warning_message_hidden_guadianName"></span>
                                 </div>
-                                <input type="text" name="guardian_name" maxlength='6'>
+                                <input class="korean-only-input" type="text" name="guardian_name" maxlength='6'>
                             </td>
                         </tr>
                         <tr class="guardian_resident_registration_num">
