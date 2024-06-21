@@ -1,0 +1,356 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'fonts';
+    src: url('fonts/OpenSans-Regular.ttf')format('truetype');
+    font-style: normal;
+    unicode-range: U+0041-005A, U+0061-007A;
+}
+
+@font-face {
+    font-family: 'fonts';
+    src: url('fonts/NotoSansKR-Regular.ttf')format('truetype');
+    font-style: normal;
+    unicode-range: U+AC00-D7A3, U+0030-0039;
+}
+
+@font-face {
+    font-family: 'fonts';
+    src: url('fonts/NotoSansJP-Regular.ttf')format('truetype');
+    unicode-range: U+3041-3096, U+309D, U+309E, U+30A1-30FA, U+30FC, U+4E00-9FEA;
+}
+
+body {
+    font-family: 'fonts';
+}
+
+.header_1 {
+    width: 99vw;
+}
+
+.header_1_menu {
+    display: flex;
+    justify-content: end;
+    gap: 30px;
+    margin-right: 275px;
+}
+
+.header_1_menu a {
+    text-decoration: none;
+    color: #000;
+}
+
+.header_1_menu a:hover {
+    text-decoration: underline;
+    color: #ff0000;
+}
+
+.languageSelect {
+    display: none;
+    position: absolute;
+    top: 0
+}
+
+.dropdown_btn:hover .languageSelect {
+    display: block;
+}
+
+
+.header_2 {
+    position: absolute;
+    align-items: center;
+    width: 99vw;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.header_2_menu {
+    width: 50vw;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.header_2_menu a {
+    position: relative;
+    font-size: 1.25em;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.header_2_menu a::after {
+    display: block;
+    content: '';
+    border-bottom: 3px solid #fff;
+    transform: scaleX(0);
+    transition: all 300ms;
+    transform-origin: left;
+}
+
+.header_2_menu a:hover::after {
+    transform: scaleX(1);
+}
+
+.login {
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.login a {
+    font-size: 1em;
+    text-decoration: none;
+    color: white;
+}
+
+.login_form {
+    top: -40vw;
+    background-color: #f5f5f5;
+    width: 99vw;
+    height: 700px;
+    border-bottom: 5px solid #191A38;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    text-align: center;
+    z-index: 99;
+}
+
+@keyframes loginFormAnimation_on {
+    0% {
+        top: -40vw;
+    }
+
+    100% {
+        top: 0vw;
+    }
+}
+
+@keyframes loginFormAnimation_off {
+    0% {
+        top: 0vw;
+    }
+
+    100% {
+        top: -40vw;
+    }
+}
+
+.login_container input {
+    display: block;
+    width: 360px;
+    height: 50px;
+    margin-bottom: 10px;
+    font-size: 1em;
+    padding-left: 10px;
+}
+
+.login_container .login_btn {
+    padding-left: 0px;
+    font-size: 1.25em;
+    font-weight: bold;
+    background-color: #7C82FF;
+    color: #fff;
+    border: none;
+}
+
+.login_container .login_btn:hover {
+    background-color: #7075FF;
+}
+
+.serch_user_info {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.exit_btn {
+    width: 50px;
+    height: 50px;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    color: #7d7d7d;
+    background-color: #fff;
+    border: 1px solid #999999;
+    cursor: pointer;
+}
+
+.exit_btn:hover {
+    background-color: #7C82FF;
+    color: #fff;
+    border: 1px solid #5c61cd;
+}
+
+.login_member,
+.login_staff_only {
+    position: relative;
+    border-top: 3px solid #7075FF;
+    padding: 0 50px;
+    margin: 40px 0;
+    background-color: #ffffff;
+}
+
+.login_member h1,
+.login_staff_only h1 {
+    padding-bottom: 20px;
+}
+
+.sns_login {
+    margin-top: 20px;
+}
+
+.sns_login img {
+    width: 175 px;
+    height: 45px;
+}
+
+main {
+    margin-top: 150px;
+}
+
+.member_title {
+    width: 1200px;
+    margin: auto;
+}
+
+.member_nav {
+    display: flex;
+    justify-content: center;
+    width: 1200px;
+    list-style-type: none;
+    margin: 20px auto;
+}
+
+.member_nav li {
+    padding: 10px 0 10px 20px;
+}
+
+.nav_1 {
+    width: 400px;
+    background-color: #5156D7;
+    border: 1px solid #5156D7;
+    color: #fff;
+}
+
+.nav_2 {
+    width: 400px;
+    background-color: #fff;
+    border-top: 1px solid #b8b8b8;
+    border-bottom: 1px solid #b8b8b8;
+    color: #b8b8b8;
+}
+
+.nav_3 {
+    width: 400px;
+    background-color: #fff;
+    border: 1px solid #b8b8b8;
+    color: #b8b8b8;
+}
+
+.select_container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.select_title {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.select_type {
+    width: 1200px;
+}
+
+.select_type h1 {
+    margin: 20px 0;
+}
+
+.select_type .select_type_btn{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.select_type .select_type_btn a {
+    display: grid;
+    width: 350px;
+    height: 500px;
+    text-align: center;
+    text-decoration: none;
+    color: #B8B8B8;
+    border-top: 3px solid #B8B8B8;
+    border-bottom: 3px solid #b8b8b8;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    cursor: pointer;
+}
+
+.select_type .select_type_btn a:hover {
+    border: 3px solid #5156D7;
+    color: #5156D7;
+}
+
+.select_type .select_type_btn a:hover .icon_unhover {
+    display: none;
+}
+
+.select_type .select_type_btn a:hover .icon_hover {
+    display: block;
+}
+
+.icon_hover {
+    display: none;
+}
+
+.select_type img {
+    margin: auto;
+}
+
+.text_container{
+    margin: 20px 0;
+}
+footer {
+    background-color: #191A38;
+    display: grid;
+    justify-content: center;
+}
+
+.footer_container {
+    width: 1190px;
+
+}
+
+.footer_links {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer_links a {
+    font-size: 1em;
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer_links a:hover {
+    text-decoration: underline;
+    color: #ff0000;
+}
+
+.hospital_info {
+    color: #aaaaaa;
+    margin-bottom: 20px;
+}
