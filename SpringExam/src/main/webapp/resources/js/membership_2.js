@@ -517,7 +517,6 @@ function warningMessage() {
             return value.length !== 0 && onlyNumber(value) && secoundRegNumLength(value);
         }
 
-        // 기타 필드에 대한 추가적인 유효성 검사가 필요한 경우 처리
         return true;
     }
 

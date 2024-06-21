@@ -9,8 +9,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="/resources/css/membership_2.css" type="text/css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-    <!-- js랑 css경로 확인해주세용 -->
 </head>
 
 <body>
