@@ -9,8 +9,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="/resources/css/membership_1.css" type="text/css">
 </head>
-<script src="components/HospitalHeader_Logout.js?ver=1" defer></script>
-<script src="components/HospitalFooter.js?ver=1" defer></script>
+<script src="/resources/components/HospitalHeader_Logout.js?ver=1" defer></script>
+<script src="/resources/components/HospitalFooter.js?ver=1" defer></script>
 
 <body>
     <hospital-header-logout></hospital-header-logout>
@@ -43,24 +43,24 @@
                 <h1>회원유형</h1>
                 <div class="select_type_btn">
                     <a onclick="navigateToForm('under14')">
-                        <img class="icon_hover" src="img/child_icon_hover.png" alt="">
-                        <img class="icon_unhover" src="img/child_icon.png" alt="">
+                        <img class="icon_hover" src="/resources/img/index_img/child_icon_hover.png" alt="">
+                        <img class="icon_unhover" src="/resources/img/index_img/child_icon.png" alt="">
                         <div class="select_1">
                             <h4>만 14세 미만</h4>
                             <h3>어린이 회원</h3>
                         </div>
                     </a>
                     <a onclick="navigateToForm('over14')">
-                        <img class="icon_hover" src="img/adult_icon_hover.png" alt="">
-                        <img class="icon_unhover" src="img/adult_icon.png" alt="">
+                        <img class="icon_hover" src="/resources/img/index_img/adult_icon_hover.png" alt="">
+                        <img class="icon_unhover" src="/resources/img/index_img/adult_icon.png" alt="">
                         <div class="select_1">
                             <h4>만 14세 이상</h4>
                             <h3>일반 회원</h3>
                         </div>
                     </a>
                     <a onclick="navigateToForm('staff')">
-                        <img class="icon_hover" src="img/doctor_icon_hover.png" alt="">
-                        <img class="icon_unhover" src="img/doctor_icon.png" alt="">
+                        <img class="icon_hover" src="/resources/img/index_img/doctor_icon_hover.png" alt="">
+                        <img class="icon_unhover" src="/resources/img/index_img/doctor_icon.png" alt="">
                         <div class="select_1">
                             <h4>직원 전용</h4>
                             <h3>전공의, 레지던트, 간호사</h3>
