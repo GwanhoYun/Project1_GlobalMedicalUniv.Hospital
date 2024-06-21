@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/resources/css/membership_2.css" type="text/css">
-    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
     <!-- js랑 css경로 확인해주세용 -->
 </head>
@@ -173,7 +173,7 @@
                 </div>
                 <h1>회원정보 입력</h1>
                 <p style="color: red; text-align: center;">*표시는 필수사항 입니다.</p>
-                <form class="membership_form" action="membership" method="post">
+                <form class="membership_form" action="/membership" method="post">
                     <table>
                         <tr class="user_id">
                             <td>
@@ -183,7 +183,7 @@
                                 </div>
                                 <div class="id_container">
                                     <input type="text" maxlength='15' id='getId' name="id" class="id_input" placeholder="영어, 숫자조합 6~15자" required>
-                                    <button class="search_duplicate" type="button" onclick="idCheck()" >중복확인</button>
+                                    <button class="search_duplicate" type="button" onclick="idCheck()" disabled>중복확인</button>
                                 </div>
                             </td>
                         </tr>
@@ -193,7 +193,7 @@
                                     <span>비밀번호*</span>
                                     <span class="warning_message_hidden_pw"></span>
                                 </div>
-                                <input type="password" maxlength='16' name="password" placeholder="영어, 숫자 조합 9~16자" required>
+                                <input type="password" maxlength='16' name="password" placeholder="사용 가능한 아이디 입력 시 입력가능" required readonly>
                             </td>
                         </tr>
                         <tr class="user_repw">
@@ -202,7 +202,7 @@
                                     <span>비밀번호 확인*</span>
                                     <span class="warning_message_hidden_repw"></span>
                                 </div>
-                                <input type="password" maxlength='16' placeholder="사용 가능한 비밀번호 입력 시 입력가능" required disabled>
+                                <input type="password" maxlength='16' placeholder="사용 가능한 비밀번호 입력 시 입력가능" required readonly>
                             </td>
                         </tr>
                         <tr class="medical_office">
@@ -329,8 +329,8 @@
     </footer>
 </body>
 
-<script type="text/javascript" src="/resources/js/membership_2.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="resources/js/membership_2.js"></script>
+
 
 
 </html>

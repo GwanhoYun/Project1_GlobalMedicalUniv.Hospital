@@ -129,21 +129,30 @@ body {
 
 @keyframes loginFormAnimation_on {
     0% {
-        top: -40vw;
+        display: none;
+        top: -99vw;
+    }
+    1%{
+        display: flex;
     }
 
     100% {
+        display: flex;
         top: 0vw;
     }
 }
 
 @keyframes loginFormAnimation_off {
     0% {
+        display: flex;
         top: 0vw;
     }
-
+    99%{
+        display: flex;
+    }
     100% {
-        top: -40vw;
+        display: none;
+        top: -99vw;
     }
 }
 
@@ -377,6 +386,13 @@ footer {
     gap: 20px;
 }
 
+/* .input-error {
+    border: 2px solid red;
+}
+.input-success {
+    border: 2px solid green;
+} */
+
 .submitBtn{
     margin: 20px 0;
     width: 400px;
@@ -390,4 +406,3 @@ footer {
 .submitBtn:hover {
     background-color: #5156D7;
 }
-

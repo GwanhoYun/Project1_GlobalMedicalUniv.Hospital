@@ -43,7 +43,7 @@ public class memberShipController {
     
     int result = memberservice.idCheck(id);
     
-
+    
     
     if (result != 0) {
      
