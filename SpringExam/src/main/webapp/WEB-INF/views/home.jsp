@@ -48,7 +48,7 @@
                     </div>
                 </form>
                 <div class="serch_user_info">
-                    <a href=/membership>회원가입</a>
+                    <a href=/membership1>회원가입</a>
                     <span> | </span>
                     <a href="#">아이디찾기</a>
                     <span> | </span>
