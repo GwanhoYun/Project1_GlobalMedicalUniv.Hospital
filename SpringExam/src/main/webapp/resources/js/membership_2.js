@@ -246,7 +246,7 @@ function warningMessage() {
             removeNonKoreanCharacters(event.target);
         });
     });
-    //----------------------------------------------------------------------------------
+    //---------------------------------------------------------------------------------
     // 모든 영어, 숫자 이외의 문자를 지우는 함수
     function removeNonEngNumCharacters(inputElement) {
         const originalValue_Eng = inputElement.value;
