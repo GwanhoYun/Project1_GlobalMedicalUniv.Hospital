@@ -7,8 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="/resources/css/membership_2.css" type="text/css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/resources/css/membership_2.css?ver=1" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js?ver=1"></script>
 </head>
 
 <body>
@@ -23,7 +23,7 @@
         </div>
         <div class="header_2">
             <div class="logo">
-                <a href="index.html"><img src="/resources/img/index_img/Logo_white 1.png" alt="Hospital_logo" /></a>
+                <a href="/"><img src="/resources/img/index_img/Logo_white 1.png" alt="Hospital_logo" /></a>
             </div>
             <div class="header_2_menu">
                 <a href="#">예약/제증명</a>
@@ -191,7 +191,7 @@
                                     <span>비밀번호*</span>
                                     <span class="warning_message_hidden_pw"></span>
                                 </div>
-                                <input type="password" maxlength='16' name="password" placeholder="사용 가능한 아이디 입력 시 입력가능" required readonly>
+                                <input type="password" maxlength='16' name="password" placeholder="사용 가능한 아이디 입력 시 입력가능" required disabled>
                             </td>
                         </tr>
                         <tr class="user_repw">
@@ -327,7 +327,7 @@
     </footer>
 </body>
 
-<script type="text/javascript" src="resources/js/membership_2.js"></script>
+<script type="text/javascript" src="resources/js/membership_2.js?=ver1"></script>
 
 
 
