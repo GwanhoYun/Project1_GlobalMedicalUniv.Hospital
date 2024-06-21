@@ -18,8 +18,14 @@ public class memberShipController {
   
   //회원가입 페이지 이동
   @RequestMapping(value = "membership", method = RequestMethod.GET)
-  public String membership() {
+  public String membership_2() {
     return "/_membership_2";
+   }
+  
+  //회원가입 페이지 이동
+  @RequestMapping(value = "membership1", method = RequestMethod.GET)
+  public String membership_1() {
+    return "/_membership_1";
    }
   
   
