@@ -46,7 +46,7 @@ class HospitalFooter extends HTMLElement {
         `;
 
         shadow.innerHTML = `
-        <footer>
+        <footer>  
         <div class="footer_container">
             <div class="footer_links">
                 <a href="#">이용약관</a>

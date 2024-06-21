@@ -9,8 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/resources/css/membership_3.css" type="text/css">
-    <script src="components/HospitalHeader_Logout.js"></script>
-    <script src="components/HospitalFooter.js"></script>
+    <script src="/resources/components/HospitalHeader_Logout.js?ver=1" defer></script>
+    <script src="/resources/components/HospitalFooter.js?ver=1" defer></script>
 </head>
 <body>
     <hospital-header-logout></hospital-header-logout>
