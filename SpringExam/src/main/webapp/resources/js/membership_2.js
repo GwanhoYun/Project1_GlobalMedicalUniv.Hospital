@@ -129,11 +129,11 @@ function handleIdCheck(isIdAvailable) {
         messageColor([warningId], 'green');
         messageText([warningId], '사용 가능한 아이디 입니다.')
         userPw.placeholder = "영어, 숫자조합 9~16자"
-        userPw.readonly = false;
+        userPw.readOnly = false;
     } else {
         messageColor([warningId], 'red');
         messageText([warningId], '사용 중인 아이디 입니다.')
-        userPw.readonly = true;
+        userPw.readOnly = true;
     }
 }
 
@@ -278,28 +278,28 @@ function warningMessage() {
                 messageColor([warningId], 'red');
                 messageText([warningId], '영어, 숫자를 포함 6~15자이어야 합니다.');
                 duplicateBtn.disabled = true;
-                userPw.readonly = true;
+                userPw.readOnly = true;
             } else if (!onlyNumberAndEnglish(userId.value)) {
                 messageColor([warningId], 'red');
                 messageText([warningId], '영어와 숫자를 포함해야 합니다.');
                 duplicateBtn.disabled = true;
-                userPw.readonly = true;
+                userPw.readOnly = true;
             } else if (!idLength(userId.value)) {
                 messageColor([warningId], 'red');
                 messageText([warningId], '아이디는 6~15자이어야 합니다.');
                 duplicateBtn.disabled = true;
-                userPw.readonly = true;
+                userPw.readOnly = true;
             } else {
                 messageColor([warningId], 'green');
                 messageText([warningId], '아이디 중복확인 해주세요.');
                 duplicateBtn.disabled = false;
-                userPw.readonly = false;
+                userPw.readOnly = false;
             }
         } else {
             messageColor([warningId], 'red');
             messageText([warningId], '아이디는 필수 입력 사항입니다.');
             duplicateBtn.disabled = true;
-            userPw.readonly = true;
+            userPw.readOnly = true;
         }
     }
 
@@ -312,24 +312,24 @@ function warningMessage() {
             else if (!onlyNumberAndEnglish(userPw.value)) {
                 messageColor([warningPw], 'red');
                 messageText([warningPw], '영어와 숫자를 모두 포함해야 합니다.');
-                userRePw.readonly = true;
+                userRePw.readOnly = true;
             } else if (!pwLength(userPw.value)) {
                 messageColor([warningPw], 'red');
                 messageText([warningPw], '비밀번호는 9~16자이어야 합니다.');
-                userRePw.readonly = true;
+                userRePw.readOnly = true;
             } else if (userPw.value === userId.value) {
                 messageColor([warningPw], 'red');
                 messageText([warningPw], '아이디와 비밀번호가 동일합니다.');
-                userRePw.readonly = true;
+                userRePw.readOnly = true;
             } else {
                 messageColor([warningPw], 'green');
                 messageText([warningPw], '사용 가능한 비밀번호입니다.');
-                userRePw.readonly = false;
+                userRePw.readOnly = false;
             }
         } else {
             messageColor([warningPw], 'red');
             messageText([warningPw], '비밀번호는 필수 입력 사항입니다.');
-            userRePw.readonly = true;
+            userRePw.readOnly = true;
         }
     }
 
