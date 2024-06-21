@@ -86,31 +86,27 @@ class HospitalHeader_Login extends HTMLElement {
         `;
 
         shadow.innerHTML = `
-        <header>
-            <div class="header_1">
-                <div class="header_1_menu">
-                    <a href="#">한국어</a>
-                    <a href="#">English</a>
-                    <a href="#">中文</a>
-                    <a href="#">日本語</a>
-                </div>
-            </div>
-            <div class="header_2">
-                <div class="logo">
-                    <a href="index.html"><img src="/resources/img/index_img/Logo_white 1.png" alt="Hospital_logo" /></a>
-                </div>
-                <div class="header_2_menu">
-                    <a href="certificate.html">예약/제증명</a>
-                    <a href="#">진료과</a>
-                    <a href="#">병원소개</a>
-                    <a href="#">찾아오시는길</a>
-                </div>
-                <div class="login">
-                    <p class="welcome-text">${loginUser}님 환영합니다</p>
-                    <a href="${pageContext.request.contextPath}/index">로그아웃</a>
-                </div>
-            </div>
-        </header>
+       <header>
+		<div class="header_1">
+			<div class="header_1_menu">
+				<a href="#">한국어</a> <a href="#">English</a> <a href="#">中文</a> <a
+					href="#">日本語</a>
+			</div>
+		</div>
+		<div class="header_2">
+			<div class="logo">
+				<a href="index.html"><img src="/resources/img/Logo_white 1.png"
+					alt="Hospital_logo" /></a>
+			</div>
+			<div class="header_2_menu">
+				<a href="certificate.html">예약/제증명</a> <a href="#">진료과</a> <a
+					href="#">병원소개</a> <a href="#">찾아오시는길</a>
+			</div>
+			<div class="login">
+				<p class="welcome-text">${loginUser}님 환영합니다!</p>
+				<a href="${pageContext.request.contextPath}/index">로그아웃</a>
+			</div>
+	</header>
         `;
 
         shadow.appendChild(style);
