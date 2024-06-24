@@ -11,7 +11,7 @@
 <script src="/resources/components/HospitalHeader_Logout.js?ver=1" defer></script>
 <script src="/resources/components/HospitalFooter.js?ver=1" defer></script>
 <body>
-    <hospital-header-logout></hospital-header-logout>
+    <%@ include file="/resources/components/header_logout.jsp" %>
     <main>
         <div>
             <ul class="slider-container">
