@@ -58,17 +58,17 @@ main {
 
 .nav_2 {
     width: 400px;
-    background-color: #5156D7;
+    background-color: #fff;
     border-top: 1px solid #b8b8b8;
     border-bottom: 1px solid #b8b8b8;
-    color: #fff;
+    color: #b8b8b8;
 }
 
 .nav_3 {
     width: 400px;
-    background-color: #fff;
+    background-color: #5156D7;
     border: 1px solid #b8b8b8;
-    color: #b8b8b8;
+    color: #fff;
 }
 
 .member_contain{
