@@ -149,6 +149,9 @@ body {
     justify-content: center;
     gap: 80vw;
 }
+.remort a{
+	cursor : pointer;
+}
 
 .reserv_box_container {
     width: 99vw;

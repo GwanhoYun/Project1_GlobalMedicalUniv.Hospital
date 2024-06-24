@@ -137,12 +137,30 @@
                                 <input type="password" maxlength='16' placeholder="사용 가능한 비밀번호 입력 시 입력가능" required readonly>
                             </td>
                         </tr>
+                        <tr class = "email">
+                        	<td>
+                        		<div>
+                        			<span>이메일*</span>
+                        			<span class="warning_message_hidden_email"></span>
+                        		</div>
+                        		<input type="text" id="emailName" class="engNum-only-input" maxlength='16' placeholder="이메일 입력" required>
+                        		<span>@</span>
+                        		<select class="email_domain" required>
+                        			<option value="" selected>도메인 선택</option>
+                        			<option value="naver">naver.com</option>
+                        			<option value="daum">daum.net</option>
+                        			<option value="gmail">gmail.com</option>
+                        			<option value="nate">nate.com</option> 
+                        		</select>
+                        		 <input type="hidden" class="fullEmail" name="email">
+                        	</td>
+                        </tr>
                         <tr class="medical_office">
                             <td>
                                 <div>
                                     <span>부서*</span>
                                 </div>
-                                <select >
+                                <select>
                                     <option value="-" selected>-</option>
                                     <option value="외과">외과</option>
                                     <option value="내과">내과</option>

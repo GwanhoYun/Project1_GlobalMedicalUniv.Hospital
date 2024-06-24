@@ -58,7 +58,7 @@ public class loginController {
 
 	            // 관리자 여부 확인 후 리다이렉트 결정
 	            if (loginResult.getAdmin_boolean() == 1) {
-	                return "redirect:/exam"; // 관리자인 경우 /fi 페이지로 리다이렉트
+	                return "redirect:/fi"; // 관리자인 경우 /fi 페이지로 리다이렉트
 	            } else {
 	                redirectAttributes.addFlashAttribute("error", "관리자 권한이 없습니다."); // 실패 메시지 추가
 	                return "redirect:/"; // 관리자가 아닌 경우 다시 로그인 페이지로 리다이렉트

@@ -351,10 +351,18 @@ footer {
 .membership_container table td input:not(
     .resident_registration_num_form1,
     .resident_registration_num_form2,
-    .select_gender input, .submitBtn) {
+    .select_gender input, .submitBtn,
+    .email td input) {
     width: 400px;
     height: 40px;
     font-size: 0.8em;
+    margin-bottom: 5px;
+    padding-left: 5px;
+}
+.email td input, .email_domain{
+	height : 40px;
+	width: 186px;
+	font-size: 0.8em;
     margin-bottom: 5px;
     padding-left: 5px;
 }
