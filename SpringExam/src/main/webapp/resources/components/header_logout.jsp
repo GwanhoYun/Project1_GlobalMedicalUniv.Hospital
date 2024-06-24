@@ -287,6 +287,9 @@
 					<p>글로벌메디컬대학병원 의료진 전용 로그인입니다.</p>
 					<p>관계자가 아닐경우 일반 로그인을 이용해주세요.</p>
 				</div>
+				<c:if test="${not empty error}">
+					<div style="color: red;">${error}</div>
+				</c:if>
 				<form id="loginForm"
 					action="${pageContext.request.contextPath}/employee_login" method="post">
 					<div class="login_container">
