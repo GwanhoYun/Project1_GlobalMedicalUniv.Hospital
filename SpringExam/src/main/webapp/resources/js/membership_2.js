@@ -165,6 +165,7 @@ function warningMessage() {
     let userId = document.querySelector('.user_id td input'),
         userPw = document.querySelector('.user_pw td input'),
         userRePw = document.querySelector('.user_repw td input'),
+        userEmail = document.querySelector('.email td input'),
         userOfficeNum = document.querySelector('.office_num td input'),
         userName = document.querySelector('.user_name td input'),
         userGuadianN = document.querySelector('.guardian_name td input'),
@@ -176,6 +177,7 @@ function warningMessage() {
     const warningId = document.querySelector('.warning_message_hidden_id'),
         warningPw = document.querySelector('.warning_message_hidden_pw'),
         warningRePw = document.querySelector('.warning_message_hidden_repw'),
+        warningEmail= document.querySelector('.warning_message_hidden_email'),
         warningOfficeNum = document.querySelector('.warning_message_hidden_officeNum'),
         warningName = document.querySelector('.warning_message_hidden_name'),
         warningGuadianN = document.querySelector('.warning_message_hidden_guadianName'),
@@ -188,6 +190,9 @@ function warningMessage() {
 
     function pwLength(value) {
         return value.length >= 9 && value.length <= 16;
+    }
+    function emailLength(value) {
+        return value.length >= 3 && value.length <= 20;
     }
 
     function officeNumLength(value) {
@@ -344,9 +349,30 @@ function warningMessage() {
             }
         } else {
             messageColor([warningRePw], 'red');
-            messageText([warningRePw], '비밀번호 재확인은 필수 입력 사항입니다.');
+            messageText([warningRePw], '비밀번호를 한번 더 입력해주세요.');
         }
     }
+    userEmail.onkeyup = function () {
+        if (userEmail.value.length !== 0) {
+            if (!onlyNumberAndEnglish(userEmail.value) && !emailLength(userEmail.value)) {
+                messageColor([warningEmail], 'red');
+                messageText([warningEmail], '영어, 숫자를 포함 3~20자이어야 합니다.');
+            } else if (!onlyNumberAndEnglish(userEmail.value)) {
+                messageColor([warningEmail], 'red');
+                messageText([warningEmail], '영어와 숫자를 모두 포함해야 합니다.');
+            } else if (!emailLength(userEmail.value)) {
+                messageColor([warningEmail], 'red');
+                messageText([warningEmail], '이메일은 3~20자이어야 합니다.');
+            } else {
+                messageColor([warningEmail], 'green');
+                messageText([warningEmail], '사용 가능한 이메일입니다.');
+            }
+        } else {
+            messageColor([warningEmail], 'red');
+            messageText([warningEmail], '이메일은 필수 입력 사항입니다.');
+        }
+    };
+
 
     userOfficeNum.onkeyup = function () {
         if (userOfficeNum.value.length !== 0) {
@@ -473,6 +499,20 @@ function warningMessage() {
             messageText([warningGuadianRN], '주민번호는 필수 입력 사항입니다.');
         }
     }
+    
+    document.querySelector('.membership_form').addEventListener('submit', function(event4) {
+    	const emailId = document.getElementById('emailName').value.trim();
+    	const emailDomain = document.querySelector('.email_domain').value.trim();
+    	const fullEmail = document.querySelector('.fullEmail');
+    	
+    	if (emailId && emailDomain){
+    		fullEmail.value = `${emailId}@${emailDomain}`;
+    	} else {
+    		event4.preventDefault();
+    		messageColor([warningRegNum], 'red');
+            messageText([warningRegNum], '유효한 이메일을 적어주세요');
+    	}
+    });
 
     const form = document.querySelector('.membership_form');
     form.addEventListener('submit', function (event) {
@@ -507,6 +547,8 @@ function warningMessage() {
             return value.length !== 0 && onlyNumberAndEnglish(value) && pwLength(value) && value !== userId.value;
         } else if (input.classList.contains('user_repw')) {
             return value === userPw.value;
+        } else if (input.classList.contains('email')) {  // 여기에 괄호 오류가 있었습니다
+            return value.length !== 0 && onlyNumberAndEnglish(value) && emailLength(value);
         } else if (input.classList.contains('office_num')) {
             return value.length !== 0 && officeNumLength(value);
         } else if (input.classList.contains('user_name') || input.classList.contains('guardian_name')) {
@@ -519,7 +561,7 @@ function warningMessage() {
 
         return true;
     }
-
+    
 }
 
 warningMessage();

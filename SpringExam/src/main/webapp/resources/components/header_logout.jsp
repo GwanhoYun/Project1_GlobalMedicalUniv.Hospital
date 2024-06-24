@@ -293,12 +293,13 @@
 				<form id="loginForm"
 					action="${pageContext.request.contextPath}/employee_login" method="post">
 					<div class="login_container">
-						<input type="text" id="id" name="id" placeholder="아이디를 입력하세요">
-						<input type="password" id="password" name="password"
-							placeholder="비밀번호를 입력하세요"> <input class="login_btn"
+						<input type="text" id="id" name="id" class="form_lock" placeholder="아이디를 입력하세요" disabled>
+						<input type="password" id="password" class="form_lock" name="password"
+							placeholder="비밀번호를 입력하세요" disabled>
+						<input class="login_btn"
 							type="submit" id="loginButton" value="로그인">
 					</div>
-					<p style="text-decoration: underline; color: #ff0000;">*부정 사용할
+					<p style="text-decoration: underline; font-size:0.8em; color: #ff0000; margin-bottom : 5px ;">*부정 사용할
 						경우 관련 법에 따라 처벌받을 수 있습니다.</p>
 					<input class="locker" type="checkbox"> 확인했습니다.
 				</form>
