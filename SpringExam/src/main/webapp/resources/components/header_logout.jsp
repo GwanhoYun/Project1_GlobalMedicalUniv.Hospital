@@ -6,7 +6,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
     String clientId = "RhYUDtcrGAZKn45AMi7b";//애플리케이션 클라이언트 아이디값";
-    String redirectURI = URLEncoder.encode("http://localhost:8080/callback", "UTF-8");
+    String redirectURI = URLEncoder.encode("http://localhost:8080/fi", "UTF-8");
     SecureRandom random = new SecureRandom();
     String state = new BigInteger(130, random).toString();
     String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code";
@@ -288,7 +288,7 @@
 					<p>관계자가 아닐경우 일반 로그인을 이용해주세요.</p>
 				</div>
 				<form id="loginForm"
-					action="${pageContext.request.contextPath}/login" method="post">
+					action="${pageContext.request.contextPath}/employee_login" method="post">
 					<div class="login_container">
 						<input type="text" id="id" name="id" placeholder="아이디를 입력하세요">
 						<input type="password" id="password" name="password"
