@@ -22,10 +22,8 @@ public class HomeController {
 	// 접근제어자  반환타입  메서드명(매개변수, 매개변수)
 		public String exam(ExampleVO ev, Model model) {
 			
-			System.out.println(ev);
-			
-			model.addAttribute("model_a", ev);
-			return "exam";
+		
+			return "success";
 		}
 	
 

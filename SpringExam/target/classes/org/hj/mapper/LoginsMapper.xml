@@ -6,7 +6,7 @@
   
   <mapper namespace="org.hj.mapper.LoginsMapper">
     <select id="logins" resultType="org.hj.model.logins">
-        select id, password, name, email  <!-- 필요한 컬럼들을 모두 가져옵니다. -->
+        select *  <!-- 필요한 컬럼들을 모두 가져옵니다. -->
         from tbl_member
         where id=#{id} and password=#{password}
     </select>

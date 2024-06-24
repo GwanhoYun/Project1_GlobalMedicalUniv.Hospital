@@ -20,7 +20,7 @@ public class loginController {
 
 	    @Autowired
 	    LoginsService loginsService;
-
+	    //로그인 화면
 	    @RequestMapping(value = "/login", method = RequestMethod.POST)
 	    public String login(@RequestParam("id") String id,
 	                        @RequestParam("password") String password,
@@ -38,8 +38,27 @@ public class loginController {
 	            return "redirect:/fi"; // 로그인 성공 시 /fi 페이지로 리다이렉트
 	        } else {
 	            redirectAttributes.addFlashAttribute("error", "아이디 및 비밀번호가 틀렸습니다."); // 실패 메시지 추가
-	            return "redirect:/home"; // 로그인 실패 시 다시 로그인 페이지로 리다이렉트
+	            return "redirect:/"; // 로그인 실패 시 다시 로그인 페이지로 리다이렉트
 	        }
+	    }
+	    
+	    // 관리자 세션
+	    @RequestMapping(value = "/employee_login", method = RequestMethod.POST)
+	    public String userin(@RequestParam("id") String id,
+                @RequestParam("password") String password,
+                HttpSession session,
+                RedirectAttributes redirectAttributes) {
+	    	logins member = new logins();
+	    	member.setId(id);
+	        member.setPassword(password);
+	    	logins loginResult = loginsService.logins(member);
+	    	 if (loginResult != null) {
+		            session.setAttribute("login", loginResult); // 세션에 로그인 정보 추가
+		            return "redirect:/fi"; // 로그인 성공 시 /fi 페이지로 리다이렉트
+		        } else {
+		            redirectAttributes.addFlashAttribute("error", "아이디 및 비밀번호가 틀렸습니다."); // 실패 메시지 추가
+		            return "redirect:/"; // 로그인 실패 시 다시 로그인 페이지로 리다이렉트
+		        }
 	    }
 
 	    // 사용자 정보 페이지
@@ -51,7 +70,7 @@ public class loginController {
 	            model.addAttribute("loginUser", loginResult.getName()); // 사용자 이름을 모델에 추가
 	            return "fi"; // 로그인된 사용자의 정보를 표시할 페이지로 이동
 	        } else {
-	            return "redirect:/home"; // 로그인되지 않은 경우 다시 로그인 페이지로 리다이렉트
+	            return "redirect:/"; // 로그인되지 않은 경우 다시 로그인 페이지로 리다이렉트
 	        }
 	    }
 
@@ -60,7 +79,7 @@ public class loginController {
 	    public String logout(HttpSession session) {
 	        session.removeAttribute("login"); // 세션에서 로그인 정보 제거
 	        session.invalidate(); // 세션 무효화
-	        return "redirect:/home"; // 로그아웃 후에는 home 페이지로 리다이렉트
+	        return "redirect:/"; // 로그아웃 후에는 home 페이지로 리다이렉트
 	    }
 	    //네이버 컨트롤러
 	    @RequestMapping("/naver.do")
