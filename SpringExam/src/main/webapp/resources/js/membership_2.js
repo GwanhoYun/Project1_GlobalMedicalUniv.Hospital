@@ -547,7 +547,7 @@ function warningMessage() {
             return value.length !== 0 && onlyNumberAndEnglish(value) && pwLength(value) && value !== userId.value;
         } else if (input.classList.contains('user_repw')) {
             return value === userPw.value;
-        } else if (input.classList.contains('email')) {  // 여기에 괄호 오류가 있었습니다
+        } else if (input.classList.contains('email')) {
             return value.length !== 0 && onlyNumberAndEnglish(value) && emailLength(value);
         } else if (input.classList.contains('office_num')) {
             return value.length !== 0 && officeNumLength(value);

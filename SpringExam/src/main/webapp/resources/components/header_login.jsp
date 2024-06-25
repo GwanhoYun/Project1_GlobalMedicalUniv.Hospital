@@ -113,8 +113,10 @@ try {
 					alt="Hospital_logo" /></a>
 			</div>
 			<div class="header_2_menu">
-				<a href="certificate.html">예약/제증명</a> <a href="#">진료과</a> <a
-					href="#">병원소개</a> <a href="#">찾아오시는길</a>
+				<a href="certificate.html">예약/제증명</a> 
+				<a href="#">진료과</a> 
+				<a href="#">병원소개</a> 
+				<a href="#">찾아오시는길</a>
 			</div>
 			<div class="login">
 				<p class="welcome-text">${loginUser}님 환영합니다!</p>

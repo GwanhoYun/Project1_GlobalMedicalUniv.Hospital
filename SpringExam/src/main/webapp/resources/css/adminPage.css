@@ -1,0 +1,245 @@
+@font-face {
+    font-family: 'fonts';
+    src: url('fonts/OpenSans-Regular.ttf')format('truetype');
+    font-style: normal;
+    unicode-range: U+0041-005A, U+0061-007A;
+}
+
+@font-face {
+    font-family: 'fonts';
+    src: url('fonts/NotoSansKR-Regular.ttf')format('truetype');
+    font-style: normal;
+    unicode-range: U+AC00-D7A3, U+0030-0039;
+}
+
+@font-face {
+    font-family: 'fonts';
+    src: url('fonts/NotoSansJP-Regular.ttf')format('truetype');
+    unicode-range: U+3041-3096, U+309D, U+309E, U+30A1-30FA, U+30FC, U+4E00-9FEA;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: #e3e3e3;
+}
+
+body {
+    font-family: 'fonts';
+}
+
+.header_container {
+    display: flex;
+    justify-content: space-between;
+    width: 100vw;
+    align-items: center;
+    padding: 10px;
+    background-color: #6577ff;
+}
+
+.header_Logo img {
+    width: 80%;
+}
+
+.login_info {
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+    width: 30vw;
+    margin-right: 50px;
+    align-items: center;
+}
+
+.login_info .user_name {
+    color: #fff;
+    font-size: 1em;
+}
+
+.login_info button {
+    width: 70px;
+    height: 30px;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.main_container {
+    width: 85vw;
+    height: auto;
+    margin: 10px auto;
+    background-color: #fff;
+    padding: 20px 40px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px #acacac;
+}
+
+.chart_list {
+    display: flex;
+}
+
+.chart_list h1 {
+    width: 200px;
+}
+
+.search_menu {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 50px;
+}
+
+.search_menu .patients_search_option {
+    width: 120px;
+    height: 40px;
+    text-align: center;
+}
+
+.search_menu .search_box {
+    width: 350px;
+    height: 40px;
+    padding-left: 20px;
+}
+
+.search_menu .submit_btn {
+    position: absolute;
+    width: 80px;
+    height: 40px;
+}
+
+.search_menu .write button {
+    width: 80px;
+    height: 40px;
+}
+
+
+.chart_container table {
+    border-collapse: collapse;
+    border-top: 3px solid #000;
+    text-align: center;
+}
+
+.chart_container th {
+    border: 1px solid #888;
+    background-color: #d0d0d0;
+    padding: 5px 0;
+}
+
+.chart_container td {
+    border: 1px solid #888;
+    padding: 5px 0;
+    height: 33px;
+}
+
+.chart_container td p {
+    min-width: 50px;
+    max-width: 460px;
+    white-space: nowrap;
+    line-height: 1.0;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.chart_pageNum {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 85vw;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #acacac;
+    margin: 5px auto;
+    padding: 5px 0;
+}
+
+.chart_pageNum a {
+    color: #5d5d5d;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.dropdown_side {
+    position: absolute;
+    width: 120px;
+    height: auto;
+    right: 10px;
+    top: 85px;
+    background-color: #fff;
+    box-shadow: 2px 2px 5px #acacac;
+    border-radius: 15px;
+}
+
+.dropdown_side div {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 25px 0;
+}
+
+.dropdown_side ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s, max-height 1.125s;
+}
+
+.dropdown_side:hover ul {
+    opacity: 1;
+    max-height: 2000px;
+}
+
+.dropdown_side li{
+    padding: 25px 0;
+}   
+.dropdown_side a {
+    text-decoration: none;
+    color: #000;
+}
+.dropdown_side a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+    color: #000;
+}
+        .pagination_list {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap : 20px;
+            
+            
+        }
+
+        .pagination_item {
+            margin-right: 4px;
+            margin-left: 4px;
+        }
+
+        .pagination_link {
+            text-decoration: none;
+            color: #555;
+            font-size: 20px;
+            padding : none 3px;
+            
+        }
+
+        .pagination_THISpagelink {
+            text-decoration: none;
+            color: white;
+            font-size: 1.25em;
+            border-radius: 50%;
+            padding: 2px 10px;
+            background-color: #6577ff;
+        }
+
+        .pagination_link:hover {
+           text-decoration: underline;
+        }

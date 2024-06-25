@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.hj.mapper.MediBoardMapper">
+
+    
+    <select id="MediPrint" resultType="org.hj.model.MediboardVO">
+		select *
+		from MediChart
+		where 
+		name = #{uname};
+	</select>
+	
+	<select id="getTotalCount" resultType="int">
+		select count(*) from
+		MediChart;
+	</select>
+	
+	<select id="Medilist" resultType="org.hj.model.MediboardVO">
+		select * from MediChart
+		order by created_date desc
+		limit #{startRow}, #{pageSize};
+	</select>
+	
+    <select id="Medidetail" resultType="org.hj.model.MediboardVO">
+		select * from MediChart
+		where chart_number =
+		#{chart_number};
+	</select>
+	
+	<select id="detailforMODI" resultType="org.hj.model.MediboardVO">
+		select * from MediChart
+		where chart_number =
+		#{chart_number};
+	</select>
+	
+
+    <update id="Medimodify" parameterType="org.hj.model.MediboardVO">
+		update MediChart
+		set
+		diagnosis=#{diagnosis}, 
+		condition_and_opinion=#{condition_and_opinion},
+		admission_date=#{admission_date},
+		discharge_date=#{discharge_date}
+		
+		where chart_number=#{chart_number};
+	</update>
+	
+	<select id="Medisearch" resultType="org.hj.model.MediboardVO">
+		SELECT * FROM MediChart
+		WHERE
+		<choose>
+			<when test="searchType == 'name'">
+				name LIKE CONCAT('%', #{keyword}, '%')
+			</when>
+			<when test="searchType == 'chart_number'">
+				chart_number LIKE CONCAT('%', #{keyword}, '%')
+			</when>
+		</choose>
+		order by created_date desc
+	</select>
+	
+	<select id="findByName" resultType="org.hj.model.MediboardVO">
+        SELECT gender , date_of_birth FROM MediChart WHERE name = #{name}
+    </select>
+
+	<insert id="insertBoard" parameterType="org.hj.model.MediboardVO">
+		
+		INSERT INTO MediChart (
+		name,
+		date_of_birth,
+		age,
+		gender,
+		diagnosis,
+		admission_date,
+		discharge_date,
+		condition_and_opinion,
+		department_doctor
+		
+		) VALUES (
+		
+	    #{name},
+        #{date_of_birth},
+        #{age},
+        #{gender},
+        #{diagnosis},
+        #{admission_date},
+        #{discharge_date},
+        #{condition_and_opinion},
+        #{department_doctor}
+
+		);
+		
+	</insert>
+	
+    <delete id="Medidelete" parameterType="org.hj.model.MediboardVO">
+		delete from Medichart
+		where
+		chart_number=#{chart_number}
+	</delete>
+
+
+
+
+
+</mapper>
