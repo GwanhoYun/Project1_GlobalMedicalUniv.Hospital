@@ -254,7 +254,7 @@ main {
     <hospital-header-logout></hospital-header-logout>
     <main>
         <div class="main_image">
-            <img src="resources/img/Group 35.png" alt="main_image">
+            <img src="/resources/img/index_img/Group 35.png" alt="main_image">
         </div>
         <div class="side_bar">
             <div class="bar_width_size">
@@ -434,7 +434,7 @@ main {
                         <span>(인/서명)</span>
                     </div>
                     <div style="display: flex; justify-content: center;">
-                        <img src="resources/img/Logo.png" style="width: 100px;"><p>글로벌메디컬대학병원</p>
+                        <img src="/resources/img/index_img/Logo.png" style="width: 100px;"><p>글로벌메디컬대학병원</p>
                     </div>
                 </div>
             </div>

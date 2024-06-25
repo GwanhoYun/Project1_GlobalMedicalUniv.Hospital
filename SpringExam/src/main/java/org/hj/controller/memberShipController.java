@@ -70,6 +70,13 @@ public class memberShipController {
     return "redirect:/";
    }
   
+  
+  //아이디찾기 페이지 이동
+  @RequestMapping(value = "findid", method = RequestMethod.GET)
+  public String findid() {
+    return "/findId";
+   }
+  
 
   
   
