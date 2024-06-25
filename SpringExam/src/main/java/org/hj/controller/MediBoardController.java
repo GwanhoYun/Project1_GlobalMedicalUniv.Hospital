@@ -1,6 +1,7 @@
 package org.hj.controller;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import javax.servlet.http.HttpSession;
 
@@ -8,6 +9,7 @@ import org.hj.model.MediboardVO;
 import org.hj.model.logins;
 import org.hj.service.MediBoardService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -88,17 +90,31 @@ public class MediBoardController {
 	}
     
 	@GetMapping("/CertificatePrint")
-	public String print(Model model, HttpSession session) {
-		//환자의 이름과 나이가 잘 넘어가는지 확인                    
+	public String print2(Model model, HttpSession session) {
+		//동명이인으로 인한 데이터 혼동이 있을수 있으니 아이디도 같이 가져간다.
 		logins loginUser = (logins) session.getAttribute("login");
-		String uname = loginUser.getName();
-		System.out.println(uname);
+		String uname2 = loginUser.getName();
+		String userId = loginUser.getId();
+		System.out.println(uname2);
+		System.out.println(userId);
 		
-		model.addAttribute("UserData", Medibs.MediPrint(uname));
+		model.addAttribute("UDate", Medibs.MediPrint2(uname2,userId));
 		
 	return "Medicode/certificate_print"; 
 	
 	}
+	
+	@PostMapping("/PrintCertificateData")
+	public String printCertificateData(@RequestParam("selectedDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date selectedDate, Model model) {
+		
+		System.out.println(selectedDate);
+		
+		model.addAttribute("UserData", Medibs.dateForprint(selectedDate));
+		
+	return "Medicode/certificate_print"; 
+	
+	}
+
     
 	@GetMapping("/adminPage")
 	public String list(@RequestParam(defaultValue = "1") int pageNo, Model model, MediboardVO board) {	

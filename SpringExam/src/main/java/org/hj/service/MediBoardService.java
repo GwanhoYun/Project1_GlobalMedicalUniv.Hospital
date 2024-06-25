@@ -1,6 +1,7 @@
 package org.hj.service;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import org.hj.model.MediboardVO;
 
@@ -12,8 +13,11 @@ public interface MediBoardService {
      //차트 작성용
      public void insertBoard(MediboardVO board);
      
-     //진료 확인서 양식용
-     public MediboardVO MediPrint(String uname);
+     //진료 확인서 양식 데이터용
+     public MediboardVO dateForprint(Date selectedDate);
+     
+     //진료 확인서 환자 내원일
+     public ArrayList<MediboardVO> MediPrint2(String uname2,String userId);
      
      //차트 리스트(검색 사용x)
      public ArrayList<MediboardVO> Medilist(int pageNo, int pageSize);

@@ -1,6 +1,7 @@
 package org.hj.mapper;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import org.apache.ibatis.annotations.Param;
 import org.hj.model.MediboardVO;
@@ -14,8 +15,11 @@ public interface MediBoardMapper {
 	//차트 작성용
 	public void insertBoard(MediboardVO board);
 	
-	//진료 확인서 양식용
-	public MediboardVO MediPrint(@Param("uname") String uname);
+    //진료 확인서 양식 데이터용
+    public MediboardVO dateForprint(@Param("selectedDate") Date selectedDate);
+	
+    //진료 확인서 환자 내원일
+    public ArrayList<MediboardVO> MediPrint2(@Param("uname2") String uname2, @Param("userId") String userId);
 	
 	// 게시판 페이지 글 내용(검색 사용x)
     public ArrayList<MediboardVO> Medilist(@Param("startRow") int startRow, @Param("pageSize") int pageSize);

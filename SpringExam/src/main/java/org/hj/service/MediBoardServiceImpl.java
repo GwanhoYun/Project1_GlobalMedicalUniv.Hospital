@@ -1,6 +1,8 @@
 package org.hj.service;
 
 import java.util.ArrayList;
+import java.util.Date;
+
 import org.hj.mapper.MediBoardMapper;
 import org.hj.model.MediboardVO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,10 +21,16 @@ import org.springframework.stereotype.Service;
 	
 		}
 		
-		public MediboardVO MediPrint(String uname) {
+	     //진료 확인서 양식 데이터용
+	     public MediboardVO dateForprint(Date selectedDate){
 			
-			return Medibm.MediPrint(uname);
+			return Medibm.dateForprint(selectedDate);
 		}
+		
+		public ArrayList<MediboardVO> MediPrint2(String uname2,String userId) {
+			
+			return Medibm.MediPrint2(uname2,userId);
+		};
 		
 		@Override
 		public ArrayList<MediboardVO> Medilist(int pageNo, int pageSize) {

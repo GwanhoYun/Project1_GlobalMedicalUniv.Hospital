@@ -8,12 +8,19 @@
 <mapper namespace="org.hj.mapper.MediBoardMapper">
 
     
-    <select id="MediPrint" resultType="org.hj.model.MediboardVO">
+    <select id="dateForprint" resultType="org.hj.model.MediboardVO">
 		select *
 		from MediChart
 		where 
-		name = #{uname};
+		admission_date = #{selectedDate};
 	</select>
+	
+    <select id="MediPrint2" resultType="org.hj.model.MediboardVO">
+       SELECT mc.admission_date
+       FROM MediChart mc
+       JOIN tbl_member tm ON mc.name = tm.name
+       WHERE tm.name = #{uname2} AND tm.id = #{userId}
+    </select>
 	
 	<select id="getTotalCount" resultType="int">
 		select count(*) from
