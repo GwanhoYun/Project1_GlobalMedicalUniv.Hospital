@@ -44,7 +44,7 @@
                     <p>로그인하시면 다양한 서비스를 이용하실 수 있습니다.</p>
                 </div>
                 <div>
-                    <a class="home_btn" href="index.html">메인페이지</a>
+                    <a class="home_btn" href="/">메인페이지</a>
                 </div>
             </div>
        </div>

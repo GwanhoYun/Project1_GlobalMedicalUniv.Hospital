@@ -241,7 +241,7 @@
 		</div>
 		<div class="header_2">
 			<div class="logo">
-				<a href="index.html"><img src="/resources/img/index_img/Logo_white 1.png" alt="Hospital_logo" /></a>
+				<a href="/"><img src="/resources/img/index_img/Logo_white 1.png" alt="Hospital_logo" /></a>
 			</div>
 			<div class="header_2_menu">
 				<a href="certificate.html">예약/제증명</a> <a href="#">진료과</a> <a
@@ -268,8 +268,8 @@
 					</div>
 				</form>
 				<div class="serch_user_info">
-					<a href="membership.html">회원가입</a> <span> | </span> <a
-						href="search_id" class="btn btn-facebook btn-user btn-block">아이디찾기</a>
+					<a href="membership1">회원가입</a> <span> | </span> <a
+						href="/findid" class="btn btn-facebook btn-user btn-block">아이디찾기</a>
 					<span> | </span> <a href="#">비밀번호찾기</a>
 				</div>
 				<div class="sns_login">

@@ -17,7 +17,7 @@
         <div class="header_container">
             <div class="header_Logo">
                 <a href="index.html">
-                    <img src="img/Logo_white 1.png" alt="Hospital_Logos_image">
+                    <img src="/resources/img/index_img/Logo_white 1.png" alt="Hospital_Logos_image">
                 </a>
             </div>
             <div class="login_info">
