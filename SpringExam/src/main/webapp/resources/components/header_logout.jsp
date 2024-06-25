@@ -6,7 +6,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%
     String clientId = "RhYUDtcrGAZKn45AMi7b";//애플리케이션 클라이언트 아이디값";
-    String redirectURI = URLEncoder.encode("http://localhost:8080/fi", "UTF-8");
+    String redirectURI = URLEncoder.encode("http://localhost:8080/callback", "UTF-8");
     SecureRandom random = new SecureRandom();
     String state = new BigInteger(130, random).toString();
     String apiURL = "https://nid.naver.com/oauth2.0/authorize?response_type=code";
@@ -241,8 +241,7 @@
 		</div>
 		<div class="header_2">
 			<div class="logo">
-				<a href="index.html"><img src="/resources/img/index_img/Logo_white 1.png"
-					alt="Hospital_logo" /></a>
+				<a href="index.html"><img src="/resources/img/index_img/Logo_white 1.png" alt="Hospital_logo" /></a>
 			</div>
 			<div class="header_2_menu">
 				<a href="certificate.html">예약/제증명</a> <a href="#">진료과</a> <a
@@ -259,9 +258,6 @@
 					<p>글로벌메디컬대학병원 홈페이지 회원 서비스는</p>
 					<p>로그인 후 이용 가능합니다.</p>
 				</div>
-				<c:if test="${not empty error}">
-					<div style="color: red;">${error}</div>
-				</c:if>
 				<form id="loginForm"
 					action="${pageContext.request.contextPath}/login" method="post">
 					<div class="login_container">
@@ -287,9 +283,6 @@
 					<p>글로벌메디컬대학병원 의료진 전용 로그인입니다.</p>
 					<p>관계자가 아닐경우 일반 로그인을 이용해주세요.</p>
 				</div>
-				<c:if test="${not empty error}">
-					<div style="color: red;">${error}</div>
-				</c:if>
 				<form id="loginForm"
 					action="${pageContext.request.contextPath}/employee_login" method="post">
 					<div class="login_container">
