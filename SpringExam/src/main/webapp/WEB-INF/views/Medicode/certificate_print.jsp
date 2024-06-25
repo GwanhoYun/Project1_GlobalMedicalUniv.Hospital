@@ -317,7 +317,7 @@ main {
 		<div style="display: flex; justify-content: center;">
         <form action="/PrintCertificateData" method="post">
         
-           <label for="admissionDate">내원 날짜 선택:</label>
+           <label for="admissionDate"> 내원 날짜 선택:</label>
            <select id="admissionDate" name="selectedDate">
             <c:forEach items="${UDate}" var="date">
                <c:set var="formattedDate">

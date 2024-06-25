@@ -18,7 +18,7 @@ public interface MediBoardMapper {
     //진료 확인서 양식 데이터용
     public MediboardVO dateForprint(@Param("selectedDate") Date selectedDate);
 	
-    //진료 확인서 환자 내원일
+     //진료 확인서 환자 내원일
     public ArrayList<MediboardVO> MediPrint2(@Param("uname2") String uname2, @Param("userId") String userId);
 	
 	// 게시판 페이지 글 내용(검색 사용x)

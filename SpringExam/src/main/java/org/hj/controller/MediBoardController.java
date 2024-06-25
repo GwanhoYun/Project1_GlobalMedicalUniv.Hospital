@@ -95,7 +95,7 @@ public class MediBoardController {
 		logins loginUser = (logins) session.getAttribute("login");
 		String uname2 = loginUser.getName();
 		String userId = loginUser.getId();
-		System.out.println(uname2);
+		System.out.println( uname2);
 		System.out.println(userId);
 		
 		model.addAttribute("UDate", Medibs.MediPrint2(uname2,userId));

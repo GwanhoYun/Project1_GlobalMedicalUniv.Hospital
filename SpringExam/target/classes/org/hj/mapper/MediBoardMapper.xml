@@ -16,7 +16,7 @@
 	</select>
 	
     <select id="MediPrint2" resultType="org.hj.model.MediboardVO">
-       SELECT mc.admission_date
+        SELECT mc.admission_date
        FROM MediChart mc
        JOIN tbl_member tm ON mc.name = tm.name
        WHERE tm.name = #{uname2} AND tm.id = #{userId}

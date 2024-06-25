@@ -21,7 +21,7 @@ import org.springframework.stereotype.Service;
 	
 		}
 		
-	     //진료 확인서 양식 데이터용
+	      //진료 확인서 양식 데이터용
 	     public MediboardVO dateForprint(Date selectedDate){
 			
 			return Medibm.dateForprint(selectedDate);
