@@ -109,7 +109,7 @@ try {
 		</div>
 		<div class="header_2">
 			<div class="logo">
-				<a href="index.html"><img src="/resources/img/index_img/Logo_white 1.png"
+				<a href="src/main/webapp/WEB-INF/views/fi.jsp"><img src="/resources/img/index_img/Logo_white 1.png"
 					alt="Hospital_logo" /></a>
 			</div>
 			<div class="header_2_menu">
