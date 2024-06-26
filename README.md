@@ -59,7 +59,7 @@
       
 - - - - -
 
-## 구현 예시
+## 구현 예시 (프론트엔드)
 
 **로그인 , 회원가입 (MAIN PAGE, MEMBERHSHIP PAGE)**
 
@@ -90,8 +90,18 @@ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/af9cdd4b4f
 
 https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/af9cdd4b4f847ee0da528132c16823c69f723664/SpringExam/src/main/webapp/resources/js/membership_2.js#L517-L563
 
-**차트 입력(ADMIN PAGE)**
+**차트 작성**
 
+![chart_page](https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/assets/168157310/12735bf4-9e82-4abe-9689-bb5f3671a9b6)
+
+![chart1](https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/assets/168157310/ecc3a9b1-b5fd-4c5f-a80d-ea8fd20e1b2d)
+
+![chart2](https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/assets/168157310/222d5dcb-4c84-427d-90b4-d23f13699f73)
+
+- - - - -
+## 구현 예시 (백엔드)
+
+** 여기에 각자 코드 내용 추가헤주세요 :)
 - - - - -
 
 ## 🤸‍♂️팀원 소개
