@@ -62,7 +62,7 @@
 ## 구현 예시 (프론트엔드)
 
 **로그인 , 회원가입 (MAIN PAGE, MEMBERHSHIP PAGE)**
-
+![dropdown](https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/assets/168157310/75073168-374e-4302-9027-0629e0b2ff85)
 ![join](https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/assets/168157310/6255b192-e91e-4a3c-84e6-eb189d9bb855)
 
 + CSS, JAVASCRIPT를 사용해 로그인 화면을 화면 상단에서 내려오도록 하여 공간을 차지하지 않도록 함.
