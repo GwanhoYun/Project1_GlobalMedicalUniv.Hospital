@@ -16,5 +16,10 @@
       select count(*) from tbl_member where id = #{id};
     </select>
   
+   <select id="findId"  resultType="org.hj.model.memberVO">
+        SELECT * 
+        FROM tbl_member 
+        WHERE name = #{name} AND email = #{email}
+    </select>
    
   </mapper>

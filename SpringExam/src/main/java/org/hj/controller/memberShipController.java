@@ -3,9 +3,14 @@ package org.hj.controller;
 import org.hj.model.memberVO;
 import org.hj.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -72,12 +77,24 @@ public class memberShipController {
   
   
   //아이디찾기 페이지 이동
-  @RequestMapping(value = "findid", method = RequestMethod.GET)
-  public String findid() {
+  @RequestMapping(value = "findidpage", method = RequestMethod.GET)
+  public String findid(@ModelAttribute memberVO member) {
+    System.out.print(member);
     return "/findId";
    }
   
-
+  @RequestMapping(value = "/findid/{name}/{email}", method = RequestMethod.GET)
+  public ResponseEntity <memberVO> findId(@PathVariable("name") String name,@PathVariable("email") String email) {
+    
+      System.out.println("controller name 값 : "+name);
+      System.out.println("controller email 값 : " + email);
+      
+      //String id = memberservice.findId(name, email);
+      memberVO member = memberservice.findId(name, email);
+      System.out.println(member);
+      return new ResponseEntity<>(member,HttpStatus.OK);
+      
+  }
   
   
   

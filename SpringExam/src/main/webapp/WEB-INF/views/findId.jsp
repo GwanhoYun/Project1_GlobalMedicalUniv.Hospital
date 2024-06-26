@@ -8,9 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Membership</title>
     <link rel="stylesheet" href="/resources/css/findID.css?=ver1" type="text/css">
+     
 </head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="/resources/components/HospitalHeader_Logout.js?ver=1" defer></script>
 <script src="/resources/components/HospitalFooter.js?ver=1" defer></script>
+
 
 <body>
     <hospital-header-logout></hospital-header-logout>
@@ -42,13 +45,13 @@
             <div class="findID">
                 <h2>아이디 찾기</h2>
                 <div class="findID_form">
-                    <form action="" class="findID_submit_form">
+                   <!--  <form action="" class="findID_submit_form">  -->
                         <div class="user_name">
                             <div>
                                 <span>이름</span>
                                 <span class="warning_message_hidden_name"></span>
                             </div>
-                            <input class="korean-only-input" type="text" maxlength='6' name="name" required>
+                            <input class="korean-only-input" type="text" maxlength='6' id="name" name="name" required>
                         </div>
                         <div class="email">
                             <div>
@@ -66,7 +69,7 @@
                                     <option value="gmail.com">gmail.com</option>
                                     <option value="nate.com">nate.com</option>
                                 </select>
-                                <input type="hidden" class="fullEmail" name="email">
+                                <input type="hidden" class="fullEmail" name="email" id="email">
                             </div>
                         </div>
                 </div>
@@ -74,12 +77,28 @@
                     <input class="email_certification" type="submit" value="인증번호 발송">
                     <button class="findID_btn" type="button" onclick="idFind_Result()">아이디 찾기</button>
                 </div>
-                </form>
+                <!-- </form>-->
             </div>
         </div>
     </main>
     <hospital-footer></hospital-footer>
 </body>
 <script rel="javascript" type="text/javascript" src="resources/js/findID.js?=ver1"></script>
+<script>
+        function idFind_Result() {
+            const name = $("#name").val();
+            const email = $("#emailName").val();
+            
+            console.log(name)
+            console.log(email)
+            
+            $.getJSON("/findid/"+name+"/"+email+".json",function(data){
+            	 alert(data.id)
+             }).fail(function() {
+            	 alert("아이디가 없습니다.")
+             });
+        }
+    </script>
+
 
 </html>
