@@ -27,6 +27,7 @@
     </script>
 </head>
 <body>
+<%@ include file="/resources/components/header_logout.jsp" %>
     <h2>아이디 찾기</h2>
     이름: <input type="text" name="name" id="name"><br>
     이메일: <input type="text" name="email" id="email"><button>이메일 인증</button><br>
