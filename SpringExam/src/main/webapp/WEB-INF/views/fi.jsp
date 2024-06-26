@@ -83,7 +83,7 @@
 					<div class="box_4_button_container">
 						<button onclick="location.href = 'certificate.html' ">제증명
 							유의사항</button>
-						<button onclick="location.href = 'certificate.html' ">증명서
+						<button onclick="location.href = '/CertificatePrint' ">증명서
 							발급신청</button>
 					</div>
 				</div>
@@ -101,9 +101,9 @@
 			alt="quick_menu_button_hover">
 		</a> <a href="#"> <img class="icon"
 			src="/resources/img/index_img/icon_hover_3.png" alt="quick_menu_button_unhover">
-			<img class="icon_hover" src="/resources/img/index_img/icon_3.png"
+			<img class="icon_hover" src="/resources/img/index_img/icon_3.png"ㄴ
 			alt="quick_menu_button_hover">
-		</a> <a href="#"> <img class="icon"
+		</a> <a href="/CertificatePrint"> <img class="icon"
 			src="/resources/img/index_img/icon_hover_4.png" alt="quick_menu_button_unhover">
 			<img class="icon_hover" src="/resources/img/index_img/icon_4.png"
 			alt="quick_menu_button_hover">

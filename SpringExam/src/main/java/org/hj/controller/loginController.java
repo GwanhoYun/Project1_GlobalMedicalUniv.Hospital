@@ -61,7 +61,7 @@ public class loginController {
         if (loginResult != null) {
             if (loginResult.getAdmin_boolean() == 1) {
                 session.setAttribute("login", loginResult);
-                return "redirect:/fi";
+                return "redirect:/adminPage";
             } else {
                 model.addAttribute("message", "관리자 권한이 없습니다!");
                 return "home"; // loginPage는 로그인 폼이 있는 HTML 파일의 이름입니다.
