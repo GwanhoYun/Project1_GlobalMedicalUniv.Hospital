@@ -149,7 +149,7 @@ function warningMessage() {
 
         // 모든 필수 입력 필드가 유효할 경우 폼 제출
         if (allInputsValid) {
-            // form.submit();
+            form.submit();
             console.log('성공');
         } else {
             alert('필수 입력 사항을 올바르게 입력해주세요.');

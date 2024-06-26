@@ -23,4 +23,11 @@ public class MemberServicepl implements MemberService {
    
    return membermapper.idCheck(id);
   }
+  
+  @Override
+  public memberVO findId(String name, String email) {
+    System.out.println("service name 값 : "+name);
+    System.out.println("service email 값 : " + email);
+    return membermapper.findId(name, email);
+  }
 }

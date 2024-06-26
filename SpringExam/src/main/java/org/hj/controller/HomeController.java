@@ -16,7 +16,7 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 // 접근제어자  반환타입  메서드명(매개변수, 매개변수)
 	public String home(Locale locale, Model model) {
-		return "home";
+		return "index";
 	}
 	@RequestMapping(value = "/exam", method = RequestMethod.GET)
 	// 접근제어자  반환타입  메서드명(매개변수, 매개변수)

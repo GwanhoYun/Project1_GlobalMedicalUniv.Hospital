@@ -9,4 +9,6 @@ public interface MemberService {
   
 //아이디 중복 검사
  public int idCheck(String id) throws Exception;
+ 
+ public memberVO findId(String name, String email);
 }
