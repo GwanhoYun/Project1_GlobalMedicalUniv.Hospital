@@ -2,6 +2,8 @@
 
 "글로벌메디컬대학병원"이라는 가상의 병원의 로그인(일반 회원, 직원 회원)및 회원가입, 그리고 진단서 출력을 구현하는 프로젝트입니다.
 
+[웹 페이지 샘플은 여기를 참고해주세요!](https://gwanhoyun.github.io/GMUH/)
+
 - - - - -
 
 ##프로젝트 개요
@@ -60,6 +62,8 @@
 - - - - -
 
 ## 구현 예시 (프론트엔드)
+
+[프론트엔드 구동 예시는 여기를 확인해주세요😊](https://gwanhoyun.github.io/GMUH/)
 
 **로그인 , 회원가입 (MAIN PAGE, MEMBERHSHIP PAGE)**
 ![dropdown](https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/assets/168157310/75073168-374e-4302-9027-0629e0b2ff85)
