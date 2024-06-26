@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-	<%@ page import="java.net.URLEncoder" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ page import="java.net.URLEncoder" %>
 <%@ page import="java.security.SecureRandom" %>
 <%@ page import="java.math.BigInteger" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -224,6 +223,9 @@
                 width: 175 px;
                 height: 45px;
             }
+            .error-message {
+            color: red;
+        }
     </style>
 <link rel="stylesheet" href="resources/css/index.css" type="text/css">
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
@@ -258,6 +260,7 @@
 					<p>글로벌메디컬대학병원 홈페이지 회원 서비스는</p>
 					<p>로그인 후 이용 가능합니다.</p>
 				</div>
+				<p class="error-message">${error}</p>
 				<form id="loginForm"
 					action="${pageContext.request.contextPath}/login" method="post">
 					<div class="login_container">
@@ -269,7 +272,7 @@
 				</form>
 				<div class="serch_user_info">
 					<a href="membership1">회원가입</a> <span> | </span> <a
-						href="/findid" class="btn btn-facebook btn-user btn-block">아이디찾기</a>
+						href="/findidpage" class="btn btn-facebook btn-user btn-block">아이디찾기</a>
 					<span> | </span> <a href="#">비밀번호찾기</a>
 				</div>
 				<div class="sns_login">
@@ -283,6 +286,7 @@
 					<p>글로벌메디컬대학병원 의료진 전용 로그인입니다.</p>
 					<p>관계자가 아닐경우 일반 로그인을 이용해주세요.</p>
 				</div>
+				<p class="error-message">${message}</p>
 				<form id="loginForm"
 					action="${pageContext.request.contextPath}/employee_login" method="post">
 					<div class="login_container">
