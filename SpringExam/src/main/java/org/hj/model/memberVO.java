@@ -12,8 +12,15 @@ public class memberVO {
   private String guardian_age;
   private String rrn;
   private String employee_Dept;
+  private String email;
   
-  public String getEmployee_Dept() {
+  public String getEmail() {
+	return email;
+}
+public void setEmail(String email) {
+	this.email = email;
+}
+public String getEmployee_Dept() {
     return employee_Dept;
   }
   public void setEmployee_Dept(String employee_Dept) {
