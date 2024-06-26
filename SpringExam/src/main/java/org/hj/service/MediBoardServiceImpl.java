@@ -21,10 +21,10 @@ import org.springframework.stereotype.Service;
 	
 		}
 		
-	      //진료 확인서 양식 데이터용
-	     public MediboardVO dateForprint(Date selectedDate){
+	     //진료 확인서 양식 데이터용
+	     public MediboardVO dateForprint(Date selectedDate,String userId){
 			
-			return Medibm.dateForprint(selectedDate);
+			return Medibm.dateForprint(selectedDate,userId);
 		}
 		
 		public ArrayList<MediboardVO> MediPrint2(String uname2,String userId) {

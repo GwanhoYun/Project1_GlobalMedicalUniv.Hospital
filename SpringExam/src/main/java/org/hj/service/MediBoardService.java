@@ -14,7 +14,7 @@ public interface MediBoardService {
      public void insertBoard(MediboardVO board);
      
      //진료 확인서 양식 데이터용
-     public MediboardVO dateForprint(Date selectedDate);
+     public MediboardVO dateForprint(Date selectedDate, String userId);
      
       //진료 확인서 환자 내원일
      public ArrayList<MediboardVO> MediPrint2(String uname2,String userId);

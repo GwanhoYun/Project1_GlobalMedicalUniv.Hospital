@@ -105,11 +105,13 @@ public class MediBoardController {
 	}
 	
 	@PostMapping("/PrintCertificateData")
-	public String printCertificateData(@RequestParam("selectedDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date selectedDate, Model model) {
-		
+	public String printCertificateData(@RequestParam("selectedDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date selectedDate, Model model, HttpSession session) {
+		logins loginUser = (logins) session.getAttribute("login");
+		String userId = loginUser.getId();
 		System.out.println(selectedDate);
+		System.out.println(userId);
 		
-		model.addAttribute("UserData", Medibs.dateForprint(selectedDate));
+		model.addAttribute("UserData", Medibs.dateForprint(selectedDate,userId));
 		
 	return "Medicode/certificate_print"; 
 	
@@ -118,7 +120,7 @@ public class MediBoardController {
     
 	@GetMapping("/adminPage")
 	public String list(@RequestParam(defaultValue = "1") int pageNo, Model model, MediboardVO board) {	
-        int pageSize = 20; // 페이지당 게시글 수
+        int pageSize = 15; // 페이지당 게시글 수
         int totalCount = Medibs.getTotalCount(); // 전체 게시글 수
         
         // 페이지 수 계산
