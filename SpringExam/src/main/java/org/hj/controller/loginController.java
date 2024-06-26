@@ -10,9 +10,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
+
 import javax.servlet.http.HttpServletResponse;
 
 @Controller
@@ -38,7 +40,7 @@ public class loginController {
             session.setAttribute("login", loginResult); // 세션에 로그인 정보 추가
             return "redirect:/fi"; // 로그인 성공 시 /fi 페이지로 리다이렉트
         } else {
-            redirectAttributes.addFlashAttribute("error", "아이디 및 비밀번호가 틀렸습니다."); // 실패 메시지 추가
+            redirectAttributes.addFlashAttribute("error", "아이디 및 비밀번호가 틀렸습니다!"); // 실패 메시지 추가
             return "redirect:/"; // 로그인 실패 시 다시 로그인 페이지로 리다이렉트
         }
     }
@@ -48,7 +50,7 @@ public class loginController {
     public String employeeLogin(@RequestParam("id") String id,
                                 @RequestParam("password") String password,
                                 HttpSession session,
-                                RedirectAttributes redirectAttributes) {
+                                Model model) {
 
         logins member = new logins();
         member.setId(id);
@@ -57,20 +59,18 @@ public class loginController {
         logins loginResult = loginsService.logins(member);
 
         if (loginResult != null) {
-            // 관리자 여부 확인 후 세션에 로그인 정보 추가
             if (loginResult.getAdmin_boolean() == 1) {
                 session.setAttribute("login", loginResult);
-                return "redirect:/fi"; // 관리자인 경우 /fi 페이지로 리다이렉트
+                return "redirect:/fi";
             } else {
-                redirectAttributes.addFlashAttribute("error", "관리자 권한이 없습니다."); // 실패 메시지 추가
-                return "redirect:/"; // 관리자가 아닌 경우 다시 로그인 페이지로 리다이렉트
+                model.addAttribute("message", "관리자 권한이 없습니다!");
+                return "home"; // loginPage는 로그인 폼이 있는 HTML 파일의 이름입니다.
             }
         } else {
-            redirectAttributes.addFlashAttribute("error", "아이디 및 비밀번호가 틀렸습니다."); // 실패 메시지 추가
-            return "redirect:/"; // 로그인 실패 시 다시 로그인 페이지로 리다이렉트
+            model.addAttribute("message", "아이디 및 비밀번호가 틀렸습니다!");
+            return "home"; // loginPage는 로그인 폼이 있는 HTML 파일의 이름입니다.
         }
     }
-
     // 사용자 정보 페이지
     @GetMapping("/fi")
     public String userInfo(HttpSession session, Model model) {
