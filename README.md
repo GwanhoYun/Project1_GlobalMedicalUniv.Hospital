@@ -15,6 +15,15 @@
   + 👨‍💻회원 정보를 바탕으로 진단서 출력 기능 구현
   
 - - - - -
+##개발 환경
+
+window 10
+eclipse Photon Release (4.8.0)
+Visual Studio Code 1.90.2
+MySQL 8.0 CE
+JSP
+
+- - - - -
 
 ## 초기 프로젝트 기획
   + **UX편의성 중시, 불필요한 페이지 이동 및 페이지 생성 최소화**
