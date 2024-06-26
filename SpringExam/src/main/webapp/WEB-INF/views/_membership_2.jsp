@@ -147,10 +147,10 @@
                         		<span>@</span>
                         		<select class="email_domain" required>
                         			<option value="" selected>도메인 선택</option>
-                        			<option value="naver">naver.com</option>
-                        			<option value="daum">daum.net</option>
-                        			<option value="gmail">gmail.com</option>
-                        			<option value="nate">nate.com</option> 
+                        			<option value="naver.com">naver.com</option>
+                        			<option value="daum.net">daum.net</option>
+                        			<option value="gmail.com">gmail.com</option>
+                        			<option value="nate.com">nate.com</option> 
                         		</select>
                         		 <input type="hidden" class="fullEmail" name="email">
                         	</td>
