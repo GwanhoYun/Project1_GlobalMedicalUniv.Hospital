@@ -114,8 +114,8 @@ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/af9cdd4b4f
 - - - - -
 ## 구현 예시 (백엔드)
 
-** 여기에 각자 코드 내용 추가헤주세요 :)
-
+로그인 구현
+- - - - -
 + Login Controller 일반 회원이 로그인 할 경우.
   https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/0b92c14829f159fdb8b48f7253edc637c9ad1d6a/SpringExam/src/main/java/org/hj/controller/loginController.java#L18-L44
 
@@ -135,8 +135,9 @@ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/af9cdd4b4f
   https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/0b92c14829f159fdb8b48f7253edc637c9ad1d6a/SpringExam/src/main/webapp/resources/components/header_logout.jsp#L1-L17
 
 + SNS(네이버) JSP CallBack 페이지.
-  https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/0b92c14829f159fdb8b48f7253edc637c9ad1d6a/SpringExam/src/main/webapp/resources/components/header_login.jsp#L1-L78  
-  
+  https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/0b92c14829f159fdb8b48f7253edc637c9ad1d6a/SpringExam/src/main/webapp/resources/components/header_login.jsp#L1-L78
+- - - - - 
+** 여기에 각자 코드 내용 추가헤주세요 :)
 - - - - -
 
 ## 🤸‍♂️팀원 소개
