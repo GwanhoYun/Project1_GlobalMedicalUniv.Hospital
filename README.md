@@ -75,7 +75,7 @@ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/3d76526802
 https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/1c356aa54073a14fd63cc78add1acd00143ff160/SpringExam/src/main/webapp/resources/js/membership_2.js#L26-L43
 
 https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/1c356aa54073a14fd63cc78add1acd00143ff160/SpringExam/src/main/webapp/WEB-INF/views/_membership_2.jsp#L100-L105
-https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/1c356aa54073a14fd63cc78add1acd00143ff160/SpringExam/src/main/webapp/resources/js/membership_2.js#L63-L89
+https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/1c356aa54073a14fd63cc78add1acd00143ff160/SpringExam/src/main/webapp/resources/js/membership_2.js#L47-L89
 
 + JAVASCRIPT를 사용하여 유효한 텍스트만 입력 가능하도록 함.
 + ajax로 MYSQL TABLE 데이터를 조회하여 중복된 아이디인지 검사함.
