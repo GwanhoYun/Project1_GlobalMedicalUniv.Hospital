@@ -16,8 +16,8 @@ public interface MediBoardMapper {
 	public void insertBoard(MediboardVO board);
 	
     //진료 확인서 양식 데이터용
-    public MediboardVO dateForprint(@Param("selectedDate") Date selectedDate);
-	
+    public MediboardVO dateForprint(@Param("selectedDate") Date selectedDate, @Param("userId") String userId);
+
      //진료 확인서 환자 내원일
     public ArrayList<MediboardVO> MediPrint2(@Param("uname2") String uname2, @Param("userId") String userId);
 	

@@ -7,12 +7,11 @@
 
 <mapper namespace="org.hj.mapper.MediBoardMapper">
 
-    
-    <select id="dateForprint" resultType="org.hj.model.MediboardVO">
-		select *
-		from MediChart
-		where 
-		admission_date = #{selectedDate};
+	<select id="dateForprint" resultType="org.hj.model.MediboardVO">
+		SELECT mc.*
+		FROM MediChart mc
+		JOIN tbl_member tm ON mc.name = tm.name
+		WHERE mc.admission_date = #{selectedDate} AND tm.id = #{userId}
 	</select>
 	
     <select id="MediPrint2" resultType="org.hj.model.MediboardVO">
