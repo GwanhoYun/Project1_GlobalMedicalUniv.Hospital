@@ -298,10 +298,11 @@ main {
 
 .email_form{
     margin-bottom: 20px;
+    
 }
 
 .email_form input, .email_form select{
-    width: 160px;
+    width: 345px;
     height: 40px;
 }
 .findID_btn_container{

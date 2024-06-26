@@ -16,7 +16,7 @@
 
 
 <body>
-    <hospital-header-logout></hospital-header-logout>
+    <%@ include file="/resources/components/header_logout.jsp" %>
     <main>
         <div class="member_title">
             <div>
@@ -59,17 +59,8 @@
                                 <span class="warning_message_hidden_email"></span>
                             </div>
                             <div class="email_form">
-                                <input type="text" id="emailName" class="engNum-only-input" maxlength='16'
-                                    placeholder="이메일 입력" required>
-                                <span>@</span>
-                                <select class="email_domain" required>
-                                    <option value="" selected>도메인 선택</option>
-                                    <option value="naver.com">naver.com</option>
-                                    <option value="daum.com">daum.net</option>
-                                    <option value="gmail.com">gmail.com</option>
-                                    <option value="nate.com">nate.com</option>
-                                </select>
-                                <input type="hidden" class="fullEmail" name="email" id="email">
+                                <input type="text" id="email" name="email" class="email_width" maxlength='30'>
+                                
                             </div>
                         </div>
                 </div>
@@ -87,7 +78,7 @@
 <script>
         function idFind_Result() {
             const name = $("#name").val();
-            const email = $("#emailName").val();
+            const email = $("#email").val();
             
             console.log(name)
             console.log(email)
