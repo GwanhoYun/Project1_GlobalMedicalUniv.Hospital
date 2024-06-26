@@ -62,24 +62,33 @@
 ## 구현 예시
 
 **로그인 , 회원가입 (MAIN PAGE, MEMBERHSHIP PAGE)**
-https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/master/SpringExam/src/main/webapp/resources/js/membership_1.js
-  
+
 ![join](https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/assets/168157310/6255b192-e91e-4a3c-84e6-eb189d9bb855)
 
 + CSS, JAVASCRIPT를 사용해 로그인 화면을 화면 상단에서 내려오도록 하여 공간을 차지하지 않도록 함.
 
+https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/af9cdd4b4f847ee0da528132c16823c69f723664/SpringExam/src/main/webapp/resources/css/index.css#L374-L392
+https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/af9cdd4b4f847ee0da528132c16823c69f723664/SpringExam/src/main/webapp/resources/js/index.js#L37-L45
   
 + JAVASCRIPT를 사용하여 회원 유형에 따라 다른 정보 작성을 요구하도록 함. 정보 입력 페이지는 단일 페이지임.
 
+https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/1c356aa54073a14fd63cc78add1acd00143ff160/SpringExam/src/main/webapp/WEB-INF/views/_membership_2.jsp#L100-L105
 https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/3d76526802adc8784ebdeb5823e4f22d96192739/SpringExam/src/main/webapp/resources/js/membership_1.js#L1-L3
 https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/1c356aa54073a14fd63cc78add1acd00143ff160/SpringExam/src/main/webapp/resources/js/membership_2.js#L26-L43
-
-https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/1c356aa54073a14fd63cc78add1acd00143ff160/SpringExam/src/main/webapp/WEB-INF/views/_membership_2.jsp#L100-L105
 https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/1c356aa54073a14fd63cc78add1acd00143ff160/SpringExam/src/main/webapp/resources/js/membership_2.js#L47-L89
 
 + JAVASCRIPT를 사용하여 유효한 텍스트만 입력 가능하도록 함.
+
+https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/af9cdd4b4f847ee0da528132c16823c69f723664/SpringExam/src/main/webapp/resources/js/membership_2.js#L231-L277
+
+
 + ajax로 MYSQL TABLE 데이터를 조회하여 중복된 아이디인지 검사함.
+
+https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/af9cdd4b4f847ee0da528132c16823c69f723664/SpringExam/src/main/webapp/resources/js/membership_2.js#L100-L122
+  
 + 모든 검사식을 통과해야 submit이 되도록 함.
+
+https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/af9cdd4b4f847ee0da528132c16823c69f723664/SpringExam/src/main/webapp/resources/js/membership_2.js#L517-L563
 
 **차트 입력(ADMIN PAGE)**
 
