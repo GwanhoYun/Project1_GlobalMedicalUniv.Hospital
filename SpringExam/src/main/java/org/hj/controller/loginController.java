@@ -22,8 +22,7 @@ public class loginController {
 
     @Autowired
     private LoginsService loginsService;
-
-    // 로그인 처리
+    //로그인 처리
     @PostMapping("/login")
     public String login(@RequestParam("id") String id,
                         @RequestParam("password") String password,
@@ -50,7 +49,7 @@ public class loginController {
     public String employeeLogin(@RequestParam("id") String id,
                                 @RequestParam("password") String password,
                                 HttpSession session,
-                                Model model) {
+                                RedirectAttributes redirectAttributes) {
 
         logins member = new logins();
         member.setId(id);
@@ -61,14 +60,14 @@ public class loginController {
         if (loginResult != null) {
             if (loginResult.getAdmin_boolean() == 1) {
                 session.setAttribute("login", loginResult);
-                return "redirect:/adminPage";
+                return "redirect:/adminPage"; // 관리자 페이지로 리다이렉트
             } else {
-                model.addAttribute("message", "관리자 권한이 없습니다!");
-                return "home"; // loginPage는 로그인 폼이 있는 HTML 파일의 이름입니다.
+                redirectAttributes.addFlashAttribute("message", "관리자 권한이 없습니다."); // 관리자 권한 오류 메시지 추가
+                return "redirect:/"; // 관리자 권한 없을 시 로그인 페이지로 리다이렉트
             }
         } else {
-            model.addAttribute("message", "아이디 및 비밀번호가 틀렸습니다!");
-            return "home"; // loginPage는 로그인 폼이 있는 HTML 파일의 이름입니다.
+            redirectAttributes.addFlashAttribute("message", "아이디 및 비밀번호가 틀렸습니다!"); // 실패 메시지 추가
+            return "redirect:/"; // 로그인 실패 시 다시 로그인 페이지로 리다이렉트
         }
     }
     // 사용자 정보 페이지
