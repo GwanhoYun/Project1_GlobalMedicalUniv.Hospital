@@ -168,10 +168,12 @@ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/af9cdd4b4f
 2.증명서 출력 
 
 + MediChartController,MediChartMapper 증명서 출력 기능.
+  
   https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/742155623a78f785da762d0d117eeab7bab14b7c/SpringExam/src/main/java/org/hj/controller/MediBoardController.java#L92-L118
   https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/742155623a78f785da762d0d117eeab7bab14b7c/SpringExam/src/main/resources/org/hj/mapper/MediBoardMapper.xml#L10-L22
 
 + 증명서 출력 서비스 사용 이미지
+  
  ![내원 날짜를 선택](https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/assets/171635954/126b4dcb-32aa-45a3-99bc-5bc8c89ddd46)
  ![날짜를 선택후 진단서 발급](https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/assets/171635954/db380fef-c91b-4ee8-8858-fc585480e9e8)
 
