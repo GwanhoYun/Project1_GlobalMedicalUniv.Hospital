@@ -144,14 +144,39 @@ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/af9cdd4b4f
   ![dds](https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/assets/162938398/db2b93f2-2f21-4678-90ef-cf294a67619c)
 
 - - - - -
-**주진성** 직원 전용 차트 게시판(adminPage)
-+ MediChartController,MediChartMapper   관리자 페이지 게시판 기능과 검색기능 
+## 구현 예시 (백엔드)
+
+**주진성** 
+
+1.직원 전용 차트 게시판(adminPage)
+
++ MediChartController,MediChartMapper  관리자 페이지 게시판 기능과 검색기능.
  https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/1c356aa54073a14fd63cc78add1acd00143ff160/SpringExam/src/main/java/org/hj/controller/MediBoardController.java#L119-L140
  https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/1c356aa54073a14fd63cc78add1acd00143ff160/SpringExam/src/main/resources/org/hj/mapper/MediBoardMapper.xml#L25-L34
  https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/1c356aa54073a14fd63cc78add1acd00143ff160/SpringExam/src/main/resources/org/hj/mapper/MediBoardMapper.xml#L60-L72
 
-+ MediChartController,MediChartMapper 관리자 페이지 차트 글쓰기, 수정, 삭제 기능
++ MediChartController,MediChartMapper 관리자 페이지 차트 글쓰기, 수정, 삭제 기능.
+ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/1c356aa54073a14fd63cc78add1acd00143ff160/SpringExam/src/main/java/org/hj/controller/MediBoardController.java#L47-L90
+ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/1c356aa54073a14fd63cc78add1acd00143ff160/SpringExam/src/main/resources/org/hj/mapper/MediBoardMapper.xml#L36-L58
+ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/1c356aa54073a14fd63cc78add1acd00143ff160/SpringExam/src/main/resources/org/hj/mapper/MediBoardMapper.xml#L78-L111
 
++ 관리자 페이지 게시판 활용 이미지.
+ ![직원용 환자 차트 페이지 구현 사진](https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/assets/171635954/fc73482d-5639-4447-a1e9-d4aa294942a5)
+ ![수정,삭제기능](https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/assets/171635954/f324bdb5-89b7-4f47-8b38-c7a4beee236a)
+ ![검색 기능사용](https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/assets/171635954/9322b57d-1814-4f42-9bc4-b12536fed3fe)
+
+2.증명서 출력 
+
++ MediChartController,MediChartMapper 증명서 출력 기능.
+  https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/742155623a78f785da762d0d117eeab7bab14b7c/SpringExam/src/main/java/org/hj/controller/MediBoardController.java#L92-L118
+  https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/742155623a78f785da762d0d117eeab7bab14b7c/SpringExam/src/main/resources/org/hj/mapper/MediBoardMapper.xml#L10-L22
+
++ 증명서 출력 서비스 사용 이미지
+ ![내원 날짜를 선택](https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/assets/171635954/126b4dcb-32aa-45a3-99bc-5bc8c89ddd46)
+ ![날짜를 선택후 진단서 발급](https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/assets/171635954/db380fef-c91b-4ee8-8858-fc585480e9e8)
+
+- - - - -
+  
 - - - - - 
 ** 여기에 각자 코드 내용 추가헤주세요 :)
 - - - - -
