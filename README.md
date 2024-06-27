@@ -142,6 +142,16 @@ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/af9cdd4b4f
   
 + 로그인 (MAIN PAGE) 성공 시.
   ![dds](https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/assets/162938398/db2b93f2-2f21-4678-90ef-cf294a67619c)
+
+- - - - -
+**주진성** 직원 전용 차트 게시판(adminPage)
++ MediChartController,MediChartMapper   관리자 페이지 게시판 기능과 검색기능 
+ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/1c356aa54073a14fd63cc78add1acd00143ff160/SpringExam/src/main/java/org/hj/controller/MediBoardController.java#L119-L140
+ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/1c356aa54073a14fd63cc78add1acd00143ff160/SpringExam/src/main/resources/org/hj/mapper/MediBoardMapper.xml#L25-L34
+ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/1c356aa54073a14fd63cc78add1acd00143ff160/SpringExam/src/main/resources/org/hj/mapper/MediBoardMapper.xml#L60-L72
+
++ MediChartController,MediChartMapper 관리자 페이지 차트 글쓰기, 수정, 삭제 기능
+
 - - - - - 
 ** 여기에 각자 코드 내용 추가헤주세요 :)
 - - - - -
