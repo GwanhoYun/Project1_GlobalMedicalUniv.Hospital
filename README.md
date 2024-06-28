@@ -178,9 +178,53 @@ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/af9cdd4b4f
  ![날짜를 선택후 진단서 발급](https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/assets/171635954/db380fef-c91b-4ee8-8858-fc585480e9e8)
 
 - - - - -
+  ## 구현 예시 (백엔드)
+
+**강동현** 
+✔공용 파일
+ 회원가입 , 아이디 중복 확인, 아이디 찾기에 쓰인  model(VO) 파일
+ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/java/org/hj/model/memberVO.java#L1C1-L96
+ 회원가입 , 아이디 중복 확인, 아이디 찾기에 mapper.xml 파일
+ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/resources/org/hj/mapper/MemberMapper.xml#L1-L25
+
+✨ 회원가입
+  🌹Controller
+  https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/java/org/hj/controller/memberShipController.java#L24-L34
+  membership1(연령선택, 직원 비직원 선택창) -> 14세 미만, 이상 선택하면 javascript 로 해당 폼이 나오게 됨 ->membership2(회원가입 폼)
+
+  membership2 에서 회원가입 버튼을 누르면 POST 방식으로 값을 전송 
   
+  🌹memberService
+ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/java/org/hj/service/MemberServicepl.java#L14-L19
+  🌹memberMapper
+https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/java/org/hj/mapper/MemberMapper.java#L12-L14
+ mapper.xml 의 insert로 회원가입 호출
+
+✨ 아이디 중복 확인  
+🌹Controller
+https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/java/org/hj/controller/MemberController.java#L19-L23
+🌹ajax를 활용하여 controller로 값 보내기
+https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/webapp/resources/js/membership_2.js#L100-L122
+🌹값을 받는 controller
+https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/java/org/hj/controller/memberShipController.java#L49-L68
+🌹service
+https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/java/org/hj/service/MemberServicepl.java#L21-L25
+🌹mapper.java
+https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/java/org/hj/mapper/MemberMapper.java#L15-L16
+
+✨ 아이디 찾기
+🌹view 파일에서 ajax를 사용하여 controller내의 함수 호출
+여기서 name과 email을 보내면 id 값을 받고 값(반환된 아이디)이 있으면 그 값을 반환 값이 없다면 alert("아이디가 없습니다 호출")
+https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/webapp/WEB-INF/views/findId.jsp#L69-L92
+🌹controller 에서 비동기 식으로 값 받기
+https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/java/org/hj/controller/memberShipController.java#L86-L97
+🌹service
+https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/java/org/hj/service/MemberServicepl.java#L27-L32
+🌹mapper.java
+https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/java/org/hj/mapper/MemberMapper.java#L18
+
 - - - - - 
-** 여기에 각자 코드 내용 추가헤주세요 :)
+
 - - - - -
 
 ## 🤸‍♂️팀원 소개
