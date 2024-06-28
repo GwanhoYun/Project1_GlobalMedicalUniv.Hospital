@@ -188,6 +188,7 @@ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/af9cdd4b4f
  https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/resources/org/hj/mapper/MemberMapper.xml#L1-L25
 
 ✨ 회원가입
+
   🌹Controller
   https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/java/org/hj/controller/memberShipController.java#L24-L34
  
@@ -202,6 +203,7 @@ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7
  mapper.xml 의 insert로 회원가입 호출
 
 ✨ 아이디 중복 확인  
+
 🌹Controller
 https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/java/org/hj/controller/MemberController.java#L19-L23
 🌹ajax를 활용하여 controller로 값 보내기
@@ -214,6 +216,7 @@ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7
 https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/java/org/hj/mapper/MemberMapper.java#L15-L16
 
 ✨ 아이디 찾기
+
 🌹view 파일에서 ajax를 사용하여 controller내의 함수 호출
 
 여기서 name과 email을 보내면 id 값을 받고 값(반환된 아이디)이 있으면 그 값을 반환 값이 없다면 alert("아이디가 없습니다 호출")
@@ -256,6 +259,7 @@ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7
     + 데이터 베이스 설계 및 최적화 담당
     + 회원가입 기능 구현
     + 아이디 / 비밀번호 찾기 구현
+    + ppt 제작 및 발표
  
   **주진성**
   
