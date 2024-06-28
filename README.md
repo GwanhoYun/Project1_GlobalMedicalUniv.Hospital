@@ -183,13 +183,14 @@ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/af9cdd4b4f
 **강동현** 
 ✔공용 파일
  회원가입 , 아이디 중복 확인, 아이디 찾기에 쓰인  model(VO) 파일
- https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/java/org/hj/model/memberVO.java#L1C1-L96
+ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/java/org/hj/model/memberVO.java#L1-L96
  회원가입 , 아이디 중복 확인, 아이디 찾기에 mapper.xml 파일
  https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/resources/org/hj/mapper/MemberMapper.xml#L1-L25
 
 ✨ 회원가입
   🌹Controller
   https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/java/org/hj/controller/memberShipController.java#L24-L34
+ 
   membership1(연령선택, 직원 비직원 선택창) -> 14세 미만, 이상 선택하면 javascript 로 해당 폼이 나오게 됨 ->membership2(회원가입 폼)
 
   membership2 에서 회원가입 버튼을 누르면 POST 방식으로 값을 전송 
@@ -214,6 +215,7 @@ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7
 
 ✨ 아이디 찾기
 🌹view 파일에서 ajax를 사용하여 controller내의 함수 호출
+
 여기서 name과 email을 보내면 id 값을 받고 값(반환된 아이디)이 있으면 그 값을 반환 값이 없다면 alert("아이디가 없습니다 호출")
 https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/webapp/WEB-INF/views/findId.jsp#L69-L92
 🌹controller 에서 비동기 식으로 값 받기
@@ -222,6 +224,15 @@ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7
 https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/java/org/hj/service/MemberServicepl.java#L27-L32
 🌹mapper.java
 https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/c830216ee7d04c0c02831cb4e0d0da2c34a1cf25/SpringExam/src/main/java/org/hj/mapper/MemberMapper.java#L18
+
+👀id찾기 gif 파일 첨부
+![id_find](https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/assets/129707862/f83daa94-898a-40b6-9113-ae3237a885aa)
+👀회원가입 gif 파일 첨부
+![join_check](https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/assets/129707862/9802afa5-98e9-4a75-9749-b6e49cd79c5d)
+
+
+
+
 
 - - - - - 
 
