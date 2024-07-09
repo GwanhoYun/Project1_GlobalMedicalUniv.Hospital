@@ -27,7 +27,7 @@
 .welcome-text {
 	color: white;
 }
-</style>
+</style>  
 </head>
 <body>
 	<%@ include file="/resources/components/header_login.jsp" %>
