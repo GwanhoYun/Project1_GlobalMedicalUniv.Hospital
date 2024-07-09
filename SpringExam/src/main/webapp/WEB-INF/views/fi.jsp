@@ -23,7 +23,7 @@
 	src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js"
 	charset="utf-8"></script>
 <!-- 네이버 아이디로 로그인 SDK -->
-<style>
+<style> 
 .welcome-text {
 	color: white;
 }
