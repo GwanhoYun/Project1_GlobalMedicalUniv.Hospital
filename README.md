@@ -178,7 +178,7 @@ https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/blob/af9cdd4b4f
  ![날짜를 선택후 진단서 발급](https://github.com/GwanhoYun/Project1_GlobalMedicalUniv.Hospital/assets/171635954/db380fef-c91b-4ee8-8858-fc585480e9e8)
 
 - - - - -
-  ## 구현 예시 (백엔드)
+  ## 구현 예시
 
 **강동현** 
 ✔공용 파일
